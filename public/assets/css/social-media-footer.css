@@ -1,0 +1,92 @@
+/* Footer Social Media Widget Styles */
+.footer-social-widget .social-icons-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-social-widget .social-icons-list li {
+  flex: 0 0 auto;
+}
+
+.footer-social-widget .social-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5a7249 0%, #4a5f3a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(90, 114, 73, 0.2);
+}
+
+.footer-social-widget .social-icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(90, 114, 73, 0.4);
+  background: linear-gradient(135deg, #6b8e59 0%, #5a7249 100%);
+}
+
+.footer-social-widget .social-icon i {
+  font-size: 20px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.footer-social-widget .social-icon:hover i {
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+  .footer-social-widget .social-icons-list {
+    justify-content: center;
+  }
+  
+  .footer-social-widget .social-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .footer-social-widget .social-icon i {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .footer-social-widget .social-icons-list {
+    gap: 12px;
+  }
+  
+  .footer-social-widget .social-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Newsletter Input Styles */
+.footer-newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+  opacity: 1;
+}
+
+.footer-newsletter-input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-newsletter-input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-newsletter-input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-newsletter-input:focus {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}

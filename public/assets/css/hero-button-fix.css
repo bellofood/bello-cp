@@ -1,0 +1,136 @@
+/* Hero Section Button Fix */
+
+/* Ensure hero buttons are always clickable */
+.hero-button {
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+.hero-button .main-btn {
+  position: relative !important;
+  z-index: 101 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+}
+
+/* Fix for slider interference */
+.hero-slider-two .slick-slide .hero-button {
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+.hero-slider-two .slick-slide .hero-button .main-btn {
+  position: relative !important;
+  z-index: 101 !important;
+  pointer-events: auto !important;
+}
+
+/* Ensure buttons stay above slider controls */
+.hero-slider-two .slick-arrow {
+  z-index: 50 !important;
+}
+
+/* Fix for animation interference */
+.hero-button[data-animation] {
+  animation-fill-mode: both !important;
+}
+
+.hero-button[data-animation] .main-btn {
+  pointer-events: auto !important;
+}
+
+/* Golden button specific fixes */
+.main-btn.golden-btn {
+  background: linear-gradient(135deg, #F1D2A9 0%, #D4B08A 100%) !important;
+  color: #4D602C !important;
+  border: 2px solid transparent !important;
+  position: relative !important;
+  z-index: 101 !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.main-btn.golden-btn:hover {
+  background: linear-gradient(135deg, #D4B08A 0%, #C19B70 100%) !important;
+  color: #4D602C !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0px 8px 25px rgba(212, 176, 138, 0.4) !important;
+}
+
+/* White button specific fixes */
+.main-btn.filled-btn.filled-white {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  position: relative !important;
+  z-index: 101 !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.main-btn.filled-btn.filled-white:hover {
+  background: #ffffff !important;
+  color: #4D602C !important;
+  border-color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0px 8px 25px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Ensure hero content container doesn't block buttons */
+.hero-content {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Prevent image layer from interfering */
+.single-slider .image-layer {
+  z-index: -1 !important;
+}
+
+.single-slider .image-layer:after {
+  z-index: -1 !important;
+}
+
+/* Fix wave positioning to stay below content but above background */
+.hero-waves {
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.hero-waves .waves {
+  z-index: 1 !important;
+  animation: wave 6s infinite !important;
+}
+
+.hero-waves .waves.two {
+  animation-delay: 3s !important;
+}
+
+/* RTL wave fixes - MOVED to rtl-wave-fix.css to avoid conflicts */
+
+/* Mobile responsive fixes */
+@media (max-width: 767px) {
+  .hero-button .main-btn {
+    min-height: 50px !important;
+    padding: 15px 30px !important;
+    font-size: 16px !important;
+  }
+  
+  .hero-button {
+    text-align: center !important;
+  }
+}
+
+/* Ensure buttons work with touch devices */
+@media (max-width: 991px) {
+  .hero-button .main-btn {
+    -webkit-tap-highlight-color: transparent !important;
+    touch-action: manipulation !important;
+  }
+}

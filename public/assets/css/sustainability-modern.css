@@ -1,0 +1,448 @@
+/* Modern Professional Sustainability Page Styles */
+
+/* Hero Section */
+.sustainability-hero-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.sustainability-hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(77, 96, 44, 0.02) 0%, rgba(241, 210, 169, 0.03) 100%);
+  z-index: 1;
+}
+
+.sustainability-hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.sustainability-main-title {
+  font-size: 48px !important;
+  font-weight: 700 !important;
+  color: #2F2F2F !important;
+  line-height: 1.2 !important;
+  margin-bottom: 30px !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.lead-text {
+  font-size: 20px !important;
+  color: #666666 !important;
+  line-height: 1.7 !important;
+  font-weight: 400 !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* Main Content Section */
+.sustainability-content-section {
+  background: #ffffff;
+  position: relative;
+}
+
+/* Card Styles */
+.sustainability-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 50px 40px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sustainability-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4D602C 0%, #F1D2A9 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sustainability-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 70px rgba(77, 96, 44, 0.15);
+  border-color: rgba(77, 96, 44, 0.1);
+}
+
+.sustainability-card:hover::before {
+  opacity: 1;
+}
+
+/* Card Header */
+.card-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.icon-container {
+  margin-bottom: 25px;
+}
+
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4D602C 0%, #6B8240 100%);
+  color: #ffffff;
+  font-size: 32px;
+  transition: all 0.3s ease;
+  position: relative;
+  margin: 0 auto;
+}
+
+.icon-circle::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(135deg, #F1D2A9, #4D602C, #F1D2A9);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sustainability-card:hover .icon-circle::before {
+  opacity: 1;
+}
+
+.quality-icon {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.global-icon {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.promise-icon {
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+}
+
+.card-title {
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  color: #2F2F2F !important;
+  margin-bottom: 0 !important;
+  line-height: 1.3 !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* Card Content */
+.card-content {
+  flex: 1;
+  text-align: left;
+}
+
+.card-description {
+  font-size: 17px !important;
+  color: #666666 !important;
+  line-height: 1.7 !important;
+  margin-bottom: 35px !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* Commitment Items */
+.commitment-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.commitment-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: rgba(77, 96, 44, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid #4D602C;
+  transition: all 0.3s ease;
+}
+
+.commitment-item:hover {
+  background: rgba(77, 96, 44, 0.08);
+  transform: translateX(5px);
+}
+
+.commitment-item .item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #4D602C;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+  font-size: 16px;
+}
+
+.commitment-item .item-text {
+  font-size: 16px;
+  color: #2F2F2F;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Certifications Section */
+.certifications-section {
+  margin-top: 40px;
+}
+
+.certifications-title {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #2F2F2F !important;
+  margin-bottom: 25px !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.certifications-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.certification-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  background: rgba(231, 76, 60, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid #e74c3c;
+  transition: all 0.3s ease;
+}
+
+.certification-item:hover {
+  background: rgba(231, 76, 60, 0.08);
+  transform: translateX(5px);
+}
+
+.certification-item .cert-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #e74c3c;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+.certification-item .cert-text {
+  font-size: 15px;
+  color: #2F2F2F;
+  line-height: 1.6;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Promise Items */
+.promise-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.promise-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: rgba(243, 156, 18, 0.05);
+  border-radius: 10px;
+  border-left: 4px solid #f39c12;
+  transition: all 0.3s ease;
+}
+
+.promise-item:hover {
+  background: rgba(243, 156, 18, 0.08);
+  transform: translateX(5px);
+}
+
+.promise-item .item-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f39c12;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.promise-item .item-text {
+  font-size: 15px;
+  color: #2F2F2F;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Closing Statement - Modern Clean Design */
+.closing-statement-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.statement-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 30px;
+  text-align: center;
+}
+
+.statement-icon {
+  margin-bottom: 40px;
+}
+
+.statement-icon i {
+  font-size: 40px;
+  color: #4D602C;
+  opacity: 0.7;
+}
+
+.statement-text {
+  font-size: 28px !important;
+  color: #2F2F2F !important;
+  line-height: 1.5 !important;
+  font-weight: 600 !important;
+  font-style: normal !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  font-family: "Montserrat", sans-serif !important;
+  letter-spacing: -0.5px !important;
+}
+
+.statement-line {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #4D602C 0%, #F1D2A9 100%);
+  margin: 40px auto 0;
+  border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .sustainability-card {
+    padding: 40px 30px;
+  }
+  
+  .sustainability-main-title {
+    font-size: 40px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .sustainability-main-title {
+    font-size: 36px !important;
+  }
+  
+  .lead-text {
+    font-size: 18px !important;
+  }
+  
+  .card-title {
+    font-size: 24px !important;
+  }
+  
+  .commitment-items-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .promise-items-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .sustainability-hero-section {
+    padding-top: 80px !important;
+    padding-bottom: 60px !important;
+  }
+  
+  .sustainability-content-section {
+    padding-bottom: 80px !important;
+  }
+  
+  .closing-statement-section {
+    padding-bottom: 80px !important;
+  }
+  
+  .sustainability-card {
+    padding: 30px 25px;
+    margin-bottom: 30px;
+  }
+  
+  .sustainability-main-title {
+    font-size: 32px !important;
+  }
+  
+  .lead-text {
+    font-size: 16px !important;
+  }
+  
+  .card-title {
+    font-size: 22px !important;
+  }
+  
+  .statement-text {
+    font-size: 22px !important;
+  }
+  
+  .statement-container {
+    padding: 50px 20px !important;
+  }
+  
+  .icon-circle {
+    width: 65px;
+    height: 65px;
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sustainability-main-title {
+    font-size: 28px !important;
+  }
+  
+  .card-title {
+    font-size: 20px !important;
+  }
+  
+  .statement-text {
+    font-size: 20px !important;
+    line-height: 1.4 !important;
+  }
+  
+  .statement-container {
+    padding: 40px 15px !important;
+  }
+  
+  .promise-items-grid {
+    grid-template-columns: 1fr;
+  }
+}

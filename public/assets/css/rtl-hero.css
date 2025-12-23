@@ -1,0 +1,59 @@
+/* Hero section RTL optimization */
+
+/* Ensure hero section displays properly in RTL */
+html[dir="rtl"] .banner-section {
+  min-height: 100vh;
+  position: relative;
+}
+
+html[dir="rtl"] .hero-wrapper-three {
+  min-height: 100vh;
+  position: relative;
+  overflow: visible;
+}
+
+html[dir="rtl"] .hero-slider-two {
+  height: 100%;
+  width: 100%;
+}
+
+html[dir="rtl"] .slick-slider {
+  height: 100%;
+}
+
+html[dir="rtl"] .slick-list {
+  height: 100%;
+}
+
+html[dir="rtl"] .slick-track {
+  display: flex;
+  height: 100%;
+}
+
+html[dir="rtl"] .slick-slide {
+  min-height: 100vh;
+}
+
+html[dir="rtl"] .single-slider {
+  min-height: 100vh;
+  position: relative;
+  /* Use default English padding */
+}
+
+html[dir="rtl"] .image-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+html[dir="rtl"] .hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* Use default English wave styles - no RTL overrides */
+
+/* Use default English responsive padding - no overrides */

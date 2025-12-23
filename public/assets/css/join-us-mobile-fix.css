@@ -1,0 +1,191 @@
+/* Join Us Page Mobile Alignment Fixes */
+
+/* Fix Why Work With Us section on mobile - using high specificity */
+@media (max-width: 991px) {
+  .career-item .why-work-list {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 15px !important;
+    padding: 0 20px !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+  }
+  
+  .career-item .why-work-list .why-work-item {
+    min-width: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    justify-content: flex-start !important;
+    text-align: right !important;
+    padding: 10px 15px !important;
+    margin: 0 !important;
+    position: relative !important;
+  }
+  
+  .career-item .why-work-list .why-work-item i.fa-check {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin: 0 !important;
+    color: #4d602c !important;
+    font-size: 18px !important;
+    z-index: 1 !important; /* Ensure circle is visible but not overlapping text */
+  }
+  
+  /* Ensure proper text alignment for Arabic */
+  html[dir="rtl"] .career-item .why-work-list .why-work-item {
+    text-align: right !important;
+    direction: rtl !important;
+    justify-content: flex-start !important;
+    padding-right: 50px !important; /* More space for the circle */
+    padding-left: 20px !important;
+  }
+  
+  html[dir="rtl"] .career-item .why-work-list .why-work-item i.fa-check {
+    right: 15px !important; /* Move circle further from text */
+    left: auto !important;
+  }
+  
+  /* For LTR languages */
+  html[dir="ltr"] .career-item .why-work-list .why-work-item {
+    text-align: left !important;
+    padding-left: 50px !important; /* More space for the circle */
+    padding-right: 20px !important;
+  }
+  
+  html[dir="ltr"] .career-item .why-work-list .why-work-item i.fa-check {
+    left: 15px !important; /* Move circle further from text */
+    right: auto !important;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 767px) {
+  .career-item h4 {
+    font-size: 24px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .career-item .why-work-list {
+    margin-top: 20px !important;
+    padding: 0 10px !important;
+    max-width: 400px !important;
+  }
+  
+  .career-item .why-work-list .why-work-item {
+    font-size: 15px !important;
+    padding: 10px 15px !important;
+    line-height: 1.5 !important;
+    min-height: 45px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  .career-item .why-work-list .why-work-item i.fa-check {
+    font-size: 16px !important;
+  }
+  
+  /* Adjust spacing for smaller screens */
+  html[dir="rtl"] .career-item .why-work-list .why-work-item {
+    padding-right: 45px !important; /* More space for circle */
+    padding-left: 15px !important;
+  }
+  
+  html[dir="rtl"] .career-item .why-work-list .why-work-item i.fa-check {
+    right: 12px !important; /* More distance from text */
+  }
+  
+  html[dir="ltr"] .career-item .why-work-list .why-work-item {
+    padding-left: 45px !important; /* More space for circle */
+    padding-right: 15px !important;
+  }
+  
+  html[dir="ltr"] .career-item .why-work-list .why-work-item i.fa-check {
+    left: 12px !important; /* More distance from text */
+  }
+}
+
+/* Job cards mobile responsive */
+@media (max-width: 767px) {
+  .job-offer-card {
+    margin: 0 15px !important;
+    padding: 25px 20px !important;
+  }
+  
+  .job-offer-card h5 {
+    font-size: 18px !important;
+  }
+  
+  .job-offer-card p {
+    font-size: 14px !important;
+  }
+  
+  .job-tags {
+    justify-content: center !important;
+  }
+}
+
+/* Application form mobile fixes */
+@media (max-width: 767px) {
+  .application-form-wrapper {
+    padding: 0 15px !important;
+  }
+  
+  .application-form .form-control {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+}
+
+/* Section spacing fixes for mobile */
+@media (max-width: 991px) {
+  .team-section {
+    padding: 60px 0 60px !important;
+  }
+  
+  .career-item {
+    padding: 0 15px !important;
+  }
+  
+  .career-openings-section {
+    padding: 0 15px !important;
+  }
+}
+
+/* Container padding adjustments */
+@media (max-width: 575px) {
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  .career-item .why-work-list {
+    padding: 0 5px !important;
+    max-width: 350px !important;
+  }
+  
+  .career-item .why-work-list .why-work-item {
+    font-size: 14px !important;
+    min-height: 40px !important;
+  }
+  
+  /* Very small screens spacing */
+  html[dir="rtl"] .career-item .why-work-list .why-work-item {
+    padding-right: 40px !important; /* Maintain space for circle */
+    padding-left: 12px !important;
+  }
+  
+  html[dir="rtl"] .career-item .why-work-list .why-work-item i.fa-check {
+    right: 10px !important; /* Keep distance from text */
+    font-size: 15px !important;
+  }
+  
+  html[dir="ltr"] .career-item .why-work-list .why-work-item {
+    padding-left: 40px !important; /* Maintain space for circle */
+    padding-right: 12px !important;
+  }
+  
+  html[dir="ltr"] .career-item .why-work-list .why-work-item i.fa-check {
+    left: 10px !important; /* Keep distance from text */
+    font-size: 15px !important;
+  }
+}

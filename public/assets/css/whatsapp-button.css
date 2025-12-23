@@ -1,0 +1,170 @@
+/* WhatsApp Button Styling */
+
+#whatsapp-button {
+  position: fixed !important;
+  bottom: 30px !important;
+  right: 30px !important;
+  width: 70px !important;
+  height: 70px !important;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 9999 !important;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+#whatsapp-button:hover {
+  transform: translateY(-5px) scale(1.05) !important;
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6) !important;
+  background: linear-gradient(135deg, #28E377 0%, #25D366 100%) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+#whatsapp-button:active {
+  transform: translateY(-2px) scale(1.02) !important;
+  transition: transform 0.1s ease !important;
+}
+
+#whatsapp-button svg {
+  width: 32px !important;
+  height: 32px !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) !important;
+  transition: transform 0.3s ease !important;
+}
+
+#whatsapp-button:hover svg {
+  transform: scale(1.1) !important;
+}
+
+/* Pulse animation */
+#whatsapp-button::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -4px !important;
+  left: -4px !important;
+  right: -4px !important;
+  bottom: -4px !important;
+  background: linear-gradient(45deg, #25D366, transparent, #25D366) !important;
+  border-radius: 50% !important;
+  z-index: -1 !important;
+  opacity: 0 !important;
+  animation: whatsappPulse 3s ease-in-out infinite !important;
+}
+
+@keyframes whatsappPulse {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+}
+
+/* Floating animation */
+#whatsapp-button {
+  animation: whatsappFloat 4s ease-in-out infinite !important;
+}
+
+@keyframes whatsappFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+#whatsapp-button:hover {
+  animation-play-state: paused !important;
+}
+
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  #whatsapp-button {
+    bottom: 20px !important;
+    right: 20px !important;
+    width: 60px !important;
+    height: 60px !important;
+  }
+  
+  #whatsapp-button svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  #whatsapp-button {
+    bottom: 15px !important;
+    right: 15px !important;
+    width: 55px !important;
+    height: 55px !important;
+  }
+  
+  #whatsapp-button svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+}
+
+/* RTL Support */
+html[dir="rtl"] #whatsapp-button {
+  right: auto !important;
+  left: 30px !important;
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] #whatsapp-button {
+    left: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html[dir="rtl"] #whatsapp-button {
+    left: 15px !important;
+  }
+}
+
+/* Smooth entrance animation */
+#whatsapp-button {
+  animation: whatsappEntrance 0.8s cubic-bezier(0.4, 0, 0.2, 1), whatsappFloat 4s ease-in-out 0.8s infinite !important;
+}
+
+@keyframes whatsappEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(180deg);
+  }
+  70% {
+    transform: scale(1.1) rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Enhanced glassmorphism effect */
+#whatsapp-button {
+  background: linear-gradient(135deg, 
+    rgba(37, 211, 102, 0.95) 0%, 
+    rgba(18, 140, 126, 0.9) 100%) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+}
+
+/* Professional micro-interactions */
+#whatsapp-button {
+  will-change: transform, box-shadow !important;
+}

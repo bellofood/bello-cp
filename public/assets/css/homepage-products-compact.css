@@ -1,0 +1,105 @@
+/* Compact Product Cards for Homepage */
+
+/* Make the product cards smaller and add proper spacing */
+.service-bgc-section .row > [class*="col-"] {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.service-bgc-section .single-service-item {
+  max-width: 320px;
+  margin: 0 auto 30px;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.service-bgc-section .single-service-item:hover {
+  transform: scale(0.95);
+}
+
+/* Show full product images without cropping */
+.service-bgc-section .single-service-item .service-img {
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.service-bgc-section .single-service-item .service-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+/* Make title area more compact */
+.service-bgc-section .single-service-item .service-info {
+  padding: 12px 20px 18px;
+}
+
+.service-bgc-section .single-service-item .service-info .title {
+  padding: 6px 12px;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* Adjust plus button size */
+.service-bgc-section .single-service-item .service-img .icon-btn {
+  width: 60px;
+  height: 60px;
+  right: 20px;
+  top: -30px;
+}
+
+.service-bgc-section .single-service-item .service-img .icon-btn i {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 18px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1199px) {
+  .service-bgc-section .single-service-item {
+    max-width: 300px;
+    transform: scale(0.85);
+  }
+  
+  .service-bgc-section .single-service-item .service-img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 991px) {
+  .service-bgc-section .single-service-item {
+    max-width: 280px;
+    transform: scale(0.88);
+  }
+  
+  .service-bgc-section .single-service-item .service-img {
+    height: 280px;
+  }
+}
+
+@media (max-width: 767px) {
+  .service-bgc-section .single-service-item {
+    max-width: 100%;
+    transform: scale(0.95);
+  }
+  
+  .service-bgc-section .single-service-item .service-img {
+    height: 350px;
+  }
+}
+
+@media (max-width: 575px) {
+  .service-bgc-section .single-service-item {
+    transform: scale(1);
+  }
+  
+  .service-bgc-section .single-service-item .service-img {
+    height: 320px;
+  }
+}
+

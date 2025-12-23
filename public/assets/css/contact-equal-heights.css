@@ -1,0 +1,291 @@
+/* Force Equal Heights for All Contact Cards */
+
+/* Fix Section Title Spacing and Typography */
+.section-title {
+  margin-bottom: 60px !important;
+  text-align: center !important;
+}
+
+.section-title .sub-title {
+  display: block !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #4D602C !important;
+  margin-bottom: 15px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.section-title .sub-title i {
+  margin-right: 10px !important;
+  font-size: 18px !important;
+  color: #4D602C !important;
+}
+
+.section-title h2 {
+  font-size: 42px !important;
+  font-weight: 700 !important;
+  color: #2F2F2F !important;
+  margin-bottom: 20px !important;
+  line-height: 1.2 !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.section-description {
+  font-size: 18px !important;
+  color: #666666 !important;
+  line-height: 1.7 !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* RTL Typography Fixes */
+[dir="rtl"] .section-title .sub-title {
+  font-family: "Cairo", "Montserrat", sans-serif !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] .section-title .sub-title i {
+  margin-left: 10px !important;
+  margin-right: 0 !important;
+}
+
+[dir="rtl"] .section-title h2 {
+  font-family: "Cairo", "Montserrat", sans-serif !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] .section-description {
+  font-family: "Cairo", "Montserrat", sans-serif !important;
+  direction: rtl !important;
+}
+
+/* Contact Info Section Spacing */
+.contact-info-section {
+  padding-top: 100px !important;
+  padding-bottom: 80px !important;
+}
+
+.contact-info-section .container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+/* Contact Info Wrapper Styling */
+.contact-info-wrapper {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 25px !important;
+  padding: 0 !important;
+  box-shadow: 0px 20px 60px rgba(77, 96, 44, 0.1) !important;
+  border: 1px solid rgba(241, 210, 169, 0.3) !important;
+  margin-top: 40px !important;
+  overflow: hidden !important;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 32px !important;
+  }
+  
+  .section-title .sub-title {
+    font-size: 14px !important;
+  }
+  
+  .section-description {
+    font-size: 16px !important;
+  }
+  
+  .contact-info-section {
+    padding-top: 80px !important;
+    padding-bottom: 60px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .section-title h2 {
+    font-size: 28px !important;
+  }
+  
+  .section-title .sub-title {
+    font-size: 13px !important;
+  }
+  
+  .section-description {
+    font-size: 15px !important;
+  }
+}
+
+/* Override all previous height settings */
+.contact-info-item-professional {
+  height: 320px !important;
+  min-height: 320px !important;
+  max-height: 320px !important;
+  padding: 35px 25px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure parent containers use flexbox for equal heights */
+.contact-info-wrapper {
+  width: 100%;
+}
+
+.contact-info-wrapper .row {
+  display: flex !important;
+  align-items: stretch !important;
+  flex-wrap: wrap !important;
+}
+
+.contact-info-wrapper .col-lg-4,
+.contact-info-wrapper .col-md-6 {
+  display: flex !important;
+  align-items: stretch !important;
+  margin-bottom: 30px !important;
+}
+
+/* Icon wrapper consistent spacing */
+.contact-info-item-professional .icon-wrapper {
+  margin-bottom: 20px !important;
+  flex-shrink: 0 !important;
+}
+
+.contact-info-item-professional .icon {
+  width: 80px !important;
+  height: 80px !important;
+  margin: 0 auto !important;
+}
+
+/* Info section takes remaining space */
+.contact-info-item-professional .info {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+.contact-info-item-professional .info .title {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  margin-bottom: 15px !important;
+  line-height: 1.3 !important;
+}
+
+.contact-info-item-professional .info p {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 8px !important;
+}
+
+.contact-info-item-professional .info p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* RTL specific overrides */
+[dir="rtl"] .contact-info-item-professional {
+  height: 320px !important;
+  min-height: 320px !important;
+  max-height: 320px !important;
+  padding: 35px 25px !important;
+  direction: ltr !important;
+  text-align: center !important;
+}
+
+[dir="rtl"] .contact-info-item-professional .info {
+  direction: rtl !important;
+}
+
+/* Mobile responsive - maintain equal heights */
+@media (max-width: 991px) {
+  .contact-info-item-professional {
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
+    padding: 30px 20px !important;
+  }
+  
+  [dir="rtl"] .contact-info-item-professional {
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info-item-professional {
+    height: 280px !important;
+    min-height: 280px !important;
+    max-height: 280px !important;
+    padding: 25px 15px !important;
+  }
+  
+  [dir="rtl"] .contact-info-item-professional {
+    height: 280px !important;
+    min-height: 280px !important;
+    max-height: 280px !important;
+  }
+  
+  .contact-info-item-professional .info .title {
+    font-size: 18px !important;
+  }
+  
+  .contact-info-item-professional .info p {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .contact-info-item-professional {
+    height: 260px !important;
+    min-height: 260px !important;
+    max-height: 260px !important;
+    padding: 20px 15px !important;
+  }
+  
+  [dir="rtl"] .contact-info-item-professional {
+    height: 260px !important;
+    min-height: 260px !important;
+    max-height: 260px !important;
+  }
+  
+  .contact-info-item-professional .icon {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  
+  .contact-info-item-professional .icon i {
+    font-size: 28px !important;
+  }
+}
+
+/* Remove any conflicting styles */
+.contact-info-item-professional * {
+  box-sizing: border-box;
+}
+
+/* Ensure overflow is handled properly */
+.contact-info-item-professional .info p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Force consistent layout */
+.contact-info-wrapper .row > div {
+  display: flex;
+  align-items: stretch;
+}
+
+.contact-info-wrapper .row > div > .contact-info-item-professional {
+  width: 100%;
+  height: 320px;
+  min-height: 320px;
+  max-height: 320px;
+}

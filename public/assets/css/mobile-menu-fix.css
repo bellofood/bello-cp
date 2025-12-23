@@ -1,0 +1,215 @@
+/* Mobile Menu Fix for Tablet and Mobile Views */
+
+/* Fix mobile menu visibility and z-index issues */
+.header-navigation.breakpoint-on {
+  position: relative;
+  z-index: 999;
+}
+
+/* Improve mobile menu overlay */
+.header-navigation .nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.header-navigation .nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Enhanced mobile menu styles */
+.header-navigation.breakpoint-on .nav-menu {
+  text-align: left;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  z-index: 9999;
+  width: 300px;
+  height: 100vh;
+  background: #ffffff;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 60px 20px 40px;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.header-navigation.breakpoint-on .nav-menu.menu-on {
+  left: 0;
+}
+
+/* Improve menu items spacing and styling */
+.header-navigation.breakpoint-on .nav-menu .main-menu ul li {
+  display: block;
+  margin: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.header-navigation.breakpoint-on .nav-menu .main-menu ul li:last-child {
+  border-bottom: none;
+}
+
+.header-navigation.breakpoint-on .nav-menu .main-menu ul li a {
+  display: block;
+  padding: 15px 0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: none;
+}
+
+.header-navigation.breakpoint-on .nav-menu .main-menu ul li a:hover {
+  color: #4D602C;
+  padding-left: 10px;
+}
+
+/* Navbar toggler improvements */
+.header-navigation .navbar-toggler {
+  padding: 10px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  cursor: pointer;
+  display: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.header-navigation .navbar-toggler:hover {
+  background-color: rgba(77, 96, 44, 0.1);
+  border-color: #4D602C;
+}
+
+.header-navigation .navbar-toggler span {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #333;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+  border-radius: 1px;
+}
+
+/* Navbar toggler animation */
+.header-navigation .navbar-toggler.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.header-navigation .navbar-toggler.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.header-navigation .navbar-toggler.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile logo styling */
+.header-navigation.breakpoint-on .nav-menu .mobile-logo {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.header-navigation.breakpoint-on .nav-menu .mobile-logo img {
+  max-height: 40px;
+}
+
+/* Menu button styling in mobile */
+.header-navigation.breakpoint-on .nav-menu .menu-button {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.header-navigation.breakpoint-on .nav-menu .menu-button .main-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #4D602C;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.header-navigation.breakpoint-on .nav-menu .menu-button .main-btn:hover {
+  background: #3d4d23;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1199px) {
+  .header-navigation .navbar-toggler {
+    display: block;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-navigation.breakpoint-on .nav-menu {
+    width: 280px;
+    padding: 50px 20px 30px;
+  }
+  
+  .header-navigation .navbar-toggler {
+    margin-left: 15px;
+    padding: 8px 6px;
+  }
+  
+  .header-navigation .navbar-toggler span {
+    width: 18px;
+    height: 2px;
+    margin: 3px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-navigation.breakpoint-on .nav-menu {
+    width: 100%;
+    left: -100%;
+  }
+  
+  .header-navigation .navbar-toggler {
+    margin-left: 10px;
+  }
+}
+
+/* Fix for search form in mobile menu */
+.header-navigation.breakpoint-on .nav-search {
+  margin-bottom: 25px;
+}
+
+.header-navigation.breakpoint-on .nav-search .form_group {
+  position: relative;
+}
+
+.header-navigation.breakpoint-on .nav-search .form_control {
+  width: 100%;
+  padding: 12px 45px 12px 15px;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.header-navigation.breakpoint-on .nav-search .search-btn {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #666;
+  cursor: pointer;
+}
+
+.header-navigation.breakpoint-on .nav-search .search-btn:hover {
+  color: #4D602C;
+}

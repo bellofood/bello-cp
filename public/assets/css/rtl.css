@@ -1,0 +1,897 @@
+/* RTL (Right-to-Left) Styles for Arabic */
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Navigation RTL */
+html[dir="rtl"] .desktop-navigation .nav-menu {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .nav-item {
+  margin-left: 20px;
+  margin-right: 0;
+}
+
+/* Header container RTL */
+html[dir="rtl"] .header-container {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .header-logo {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+html[dir="rtl"] .mobile-nav-menu {
+  text-align: right;
+}
+
+/* Hero Section RTL */
+html[dir="rtl"] .hero-content.text-left {
+  text-align: right;
+}
+
+html[dir="rtl"] .hero-content.text-right {
+  text-align: left;
+}
+
+html[dir="rtl"] .hero-button .main-btn {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .hero-button .main-btn:last-child {
+  margin-left: 0;
+}
+
+html[dir="rtl"] .hero-button .main-btn:first-child {
+  margin-left: 10px;
+}
+
+/* Button groups RTL */
+html[dir="rtl"] .hero-button {
+  direction: rtl;
+  text-align: inherit;
+}
+
+html[dir="rtl"] .hero-content.text-center .hero-button {
+  text-align: center;
+}
+
+html[dir="rtl"] .hero-content.text-left .hero-button {
+  text-align: right;
+}
+
+html[dir="rtl"] .hero-content.text-right .hero-button {
+  text-align: left;
+}
+
+/* Ensure hero content alignment */
+html[dir="rtl"] .hero-content {
+  direction: rtl;
+}
+
+html[dir="rtl"] .hero-content h1,
+html[dir="rtl"] .hero-content p,
+html[dir="rtl"] .hero-content .sub-title {
+  text-align: inherit;
+}
+
+/* Perfect text alignment for different hero content classes */
+html[dir="rtl"] .hero-content.text-center {
+  text-align: center !important;
+  direction: rtl;
+}
+
+html[dir="rtl"] .hero-content.text-center h1,
+html[dir="rtl"] .hero-content.text-center p,
+html[dir="rtl"] .hero-content.text-center .sub-title,
+html[dir="rtl"] .hero-content.text-center .hero-button {
+  text-align: center !important;
+}
+
+html[dir="rtl"] .hero-content.text-left {
+  text-align: right !important;
+  direction: rtl;
+}
+
+html[dir="rtl"] .hero-content.text-left h1,
+html[dir="rtl"] .hero-content.text-left p,
+html[dir="rtl"] .hero-content.text-left .sub-title,
+html[dir="rtl"] .hero-content.text-left .hero-button {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .hero-content.text-right {
+  text-align: left !important;
+  direction: rtl;
+}
+
+html[dir="rtl"] .hero-content.text-right h1,
+html[dir="rtl"] .hero-content.text-right p,
+html[dir="rtl"] .hero-content.text-right .sub-title,
+html[dir="rtl"] .hero-content.text-right .hero-button {
+  text-align: left !important;
+}
+
+/* Ensure hero section is visible in RTL */
+html[dir="rtl"] .banner-section {
+  min-height: 100vh;
+  position: relative;
+}
+
+html[dir="rtl"] .hero-wrapper-three {
+  height: 100vh;
+  position: relative;
+}
+
+html[dir="rtl"] .hero-slider-two {
+  height: 100%;
+}
+
+html[dir="rtl"] .single-slider {
+  height: 100vh;
+  position: relative;
+}
+
+html[dir="rtl"] .image-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+html[dir="rtl"] .single-slider .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure hero content is properly styled */
+html[dir="rtl"] .hero-content {
+  opacity: 1;
+}
+
+html[dir="rtl"] .hero-content h1,
+html[dir="rtl"] .hero-content p,
+html[dir="rtl"] .hero-content .sub-title,
+html[dir="rtl"] .hero-content .hero-button {
+  opacity: 1;
+}
+
+/* RTL Slider fixes */
+html[dir="rtl"] .slick-slider {
+  direction: ltr !important; /* Keep slider mechanics LTR for proper function */
+}
+
+html[dir="rtl"] .slick-slide {
+  direction: rtl; /* But content should be RTL */
+}
+
+html[dir="rtl"] .slick-track {
+  display: flex;
+}
+
+html[dir="rtl"] .hero-slider-two .slick-arrow {
+  z-index: 10;
+}
+
+html[dir="rtl"] .hero-slider-two .slick-prev {
+  left: auto;
+  right: 25px;
+}
+
+html[dir="rtl"] .hero-slider-two .slick-next {
+  right: auto;
+  left: 25px;
+}
+
+/* Hero Waves RTL Fix - MOVED to rtl-wave-fix.css to avoid conflicts */
+
+/* Hero wrapper and content positioning - MOVED to rtl-wave-fix.css */
+
+/* About Section RTL */
+html[dir="rtl"] .about-bg-section .about-bg {
+  /* Move background image to the right in RTL */
+  left: auto;
+  right: 0;
+  border-radius: 40px 0px 0px 40px;
+}
+
+html[dir="rtl"] .about-bg-section .row {
+  justify-content: flex-start !important;
+}
+
+html[dir="rtl"] .about-bg-section .col-lg-6 {
+  margin-right: 50% !important;
+  margin-left: 0 !important;
+}
+
+@media (max-width: 991px) {
+  html[dir="rtl"] .about-bg-section .col-lg-6 {
+    margin-right: 0 !important;
+  }
+}
+
+html[dir="rtl"] .about-two_content-box {
+  text-align: left;
+  direction: rtl;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+html[dir="rtl"] .about-two_content-box .section-title {
+  text-align: left;
+}
+
+html[dir="rtl"] .about-two_content-box .section-title .sub-title {
+  text-align: left;
+}
+
+html[dir="rtl"] .about-two_content-box .section-title h2 {
+  text-align: left;
+}
+
+html[dir="rtl"] .about-two_content-box p {
+  text-align: left;
+}
+
+html[dir="rtl"] .about-two_content-box .about-inner-content {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .about-two_content-box .about-inner-content .inner-content {
+  margin-right: 30px;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .about-two_content-box .about-inner-content .experience-box-two {
+  text-align: center;
+}
+
+html[dir="rtl"] .about-two_content-box .check-style-one {
+  text-align: left;
+}
+
+html[dir="rtl"] .about-two_content-box .check-style-one li {
+  text-align: left;
+  direction: rtl;
+}
+
+html[dir="rtl"] .about-two_content-box .check-style-one li i {
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .about-two_content-box .main-btn {
+  direction: rtl;
+}
+
+/* Features Section RTL */
+html[dir="rtl"] .features-content-box .btn-link i {
+  margin-left: 0;
+  margin-right: 10px;
+  transform: rotate(180deg);
+}
+
+html[dir="rtl"] .check-style-one li {
+  padding-left: 0;
+  padding-right: 30px;
+  text-align: right;
+}
+
+html[dir="rtl"] .check-style-one li i {
+  left: auto;
+  right: 0;
+}
+
+/* About Section RTL */
+html[dir="rtl"] .about-inner-content {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .experience-box-two {
+  margin-left: 0;
+  margin-right: 50px;
+}
+
+/* Language Selector RTL */
+/* Language Dropdown RTL */
+html[dir="rtl"] .language-dropdown {
+  left: 0;
+  right: auto;
+}
+
+html[dir="rtl"] .unified-floating-header .modern-language-selector .language-dropdown {
+  left: 0;
+  right: auto;
+}
+
+/* RTL Responsive fixes for language dropdown */
+@media (max-width: 992px) {
+  html[dir="rtl"] .unified-floating-header .modern-language-selector .language-dropdown {
+    left: -5px;
+    right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] .unified-floating-header .modern-language-selector .language-dropdown {
+    left: -8px;
+    right: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  html[dir="rtl"] .unified-floating-header .modern-language-selector .language-dropdown {
+    left: -10px;
+    right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  html[dir="rtl"] .unified-floating-header .modern-language-selector .language-dropdown {
+    left: -12px;
+    right: auto;
+  }
+}
+
+html[dir="rtl"] .language-option {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .language-option:hover {
+  transform: translateX(-4px);
+}
+
+html[dir="rtl"] .option-text {
+  text-align: right;
+  margin-left: 0;
+  margin-right: 12px;
+}
+
+html[dir="rtl"] .check-icon {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Search RTL */
+html[dir="rtl"] .search-group {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .search-input {
+  padding-left: 15px;
+  padding-right: 50px;
+  text-align: right;
+}
+
+html[dir="rtl"] .search-submit {
+  left: 0;
+  right: auto;
+}
+
+/* General Text RTL */
+html[dir="rtl"] .sub-title {
+  text-align: right;
+}
+
+html[dir="rtl"] .sub-title i {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+/* Button RTL */
+html[dir="rtl"] .btn-link i,
+html[dir="rtl"] .icon-btn i {
+  transform: rotate(180deg);
+}
+
+/* Cards and Items RTL */
+html[dir="rtl"] .single-service-item,
+html[dir="rtl"] .features-thumb-item-two,
+html[dir="rtl"] .single-blog-post-two {
+  text-align: right;
+}
+
+/* Fix positioning of animated elements in RTL view to stay below hero section */
+
+/* Remove any height constraints that might crop images */
+html[dir="rtl"] .hero-wrapper-three {
+  overflow: visible !important;
+}
+
+/* Reduce z-index of animated shapes to stay behind hero content */
+html[dir="rtl"] .testimonial-wrapper .shape {
+  z-index: -1 !important;
+}
+
+html[dir="rtl"] .service-bgc-section .shape {
+  z-index: -1 !important;
+}
+
+html[dir="rtl"] .author-thumb-title {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .author-title {
+  text-align: right;
+  margin-left: 0;
+  margin-right: 15px;
+}
+
+/* Blog RTL */
+html[dir="rtl"] .post-meta span {
+  margin-left: 20px;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .post-meta span:last-child {
+  margin-left: 0;
+}
+
+/* Mobile Menu RTL - Comprehensive Support */
+html[dir="rtl"] .mobile-menu-toggle span {
+  transform-origin: right center;
+}
+
+/* Floating Header Mobile Menu RTL */
+html[dir="rtl"] .unified-floating-header .mobile-menu-container {
+  left: 20px;
+  right: 20px;
+}
+
+html[dir="rtl"] .unified-floating-header .mobile-menu-close {
+  right: auto;
+  left: 12px;
+}
+
+html[dir="rtl"] .unified-floating-header .mobile-search {
+  direction: rtl;
+}
+
+html[dir="rtl"] .unified-floating-header .search-group {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .unified-floating-header .search-input {
+  text-align: right;
+  direction: rtl;
+}
+
+html[dir="rtl"] .unified-floating-header .mobile-nav-menu {
+  direction: rtl;
+}
+
+html[dir="rtl"] .unified-floating-header .mobile-nav-link {
+  text-align: right;
+  direction: rtl;
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .unified-floating-header .mobile-nav-link::after {
+  transform: rotate(-135deg);
+  right: auto;
+  left: 20px;
+}
+
+html[dir="rtl"] .unified-floating-header .mobile-nav-link:hover::after {
+  transform: rotate(-135deg) translateX(-2px);
+}
+
+/* Header Actions RTL */
+html[dir="rtl"] .unified-floating-header .header-actions {
+  flex-direction: row-reverse;
+  gap: 15px;
+}
+
+html[dir="rtl"] .unified-floating-header .header-logo {
+  order: 3;
+}
+
+html[dir="rtl"] .unified-floating-header .desktop-navigation {
+  order: 2;
+}
+
+html[dir="rtl"] .unified-floating-header .header-actions {
+  order: 1;
+}
+
+/* Language Selector RTL */
+html[dir="rtl"] .unified-floating-header .modern-language-selector .language-dropdown {
+  right: auto;
+  left: 0;
+}
+
+/* Desktop Navigation RTL */
+html[dir="rtl"] .unified-floating-header .desktop-navigation .nav-menu {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .unified-floating-header .nav-item {
+  margin-left: 30px;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .unified-floating-header .nav-item:last-child {
+  margin-left: 0;
+}
+
+html[dir="rtl"] .unified-floating-header .nav-item:first-child {
+  margin-left: 30px;
+}
+
+/* RTL Responsive Breakpoints for Mobile Menu */
+@media (max-width: 1199px) {
+  html[dir="rtl"] .unified-floating-header .mobile-menu-close {
+    left: 20px;
+    right: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  html[dir="rtl"] .unified-floating-header .mobile-menu-close {
+    left: 18px;
+    right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] .unified-floating-header .mobile-menu-close {
+    left: 15px;
+    right: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  html[dir="rtl"] .unified-floating-header .mobile-menu-close {
+    left: 15px;
+    right: auto;
+  }
+}
+
+/* Fix Header Container Layout in RTL */
+html[dir="rtl"] .unified-floating-header .header-container {
+  flex-direction: row-reverse;
+}
+
+/* RTL Mobile Menu Styling */
+html[dir="rtl"] .unified-floating-header .mobile-menu-close {
+  left: 15px;
+  right: auto;
+}
+
+/* Typography improvements for Arabic */
+html[dir="rtl"] .unified-floating-header .mobile-nav-link {
+  font-family: 'Cairo', 'Montserrat', sans-serif;
+  letter-spacing: 0;
+}
+
+html[dir="rtl"] .unified-floating-header .search-input {
+  font-family: 'Cairo', 'Roboto', sans-serif;
+}
+
+/* Fix potential overflow issues in RTL */
+html[dir="rtl"] .unified-floating-header {
+  overflow: visible;
+}
+
+html[dir="rtl"] .unified-floating-header .mobile-menu-content {
+  overflow-x: hidden;
+}
+
+/* Additional RTL Layout Fixes */
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .container,
+html[dir="rtl"] .container-fluid {
+  direction: rtl;
+}
+
+/* Fix any potential layout issues with main content in RTL */
+html[dir="rtl"] main,
+html[dir="rtl"] .main-content {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Ensure hero sections work properly in RTL mobile */
+html[dir="rtl"] .hero-section,
+html[dir="rtl"] .banner-section {
+  direction: rtl;
+}
+
+/* Fix Bootstrap grid system in RTL */
+html[dir="rtl"] .row {
+  direction: rtl;
+}
+
+html[dir="rtl"] [class*="col-"] {
+  direction: ltr; /* Keep individual columns LTR for proper stacking */
+}
+
+html[dir="rtl"] [class*="col-"] > * {
+  direction: rtl; /* But content inside should be RTL */
+  text-align: right;
+}
+
+/* Mobile-specific RTL fixes */
+@media (max-width: 768px) {
+  html[dir="rtl"] body {
+    overflow-x: hidden;
+  }
+  
+  html[dir="rtl"] .unified-floating-header {
+    width: calc(100% - 20px);
+    max-width: none;
+  }
+  
+  html[dir="rtl"] .hero-content {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+/* Fix any floating elements in RTL */
+html[dir="rtl"] .float-left {
+  float: right !important;
+}
+
+html[dir="rtl"] .float-right {
+  float: left !important;
+}
+
+html[dir="rtl"] .text-left {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .text-right {
+  text-align: left !important;
+}
+
+/* Mobile Menu Toggle Animation RTL Fixes */
+html[dir="rtl"] .unified-floating-header .mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+html[dir="rtl"] .unified-floating-header .mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+
+/* Hide hero buttons in Arabic view */
+html[dir="rtl"] .hero-button {
+  display: none !important;
+}
+
+/* Mobile Menu Overlay RTL */
+html[dir="rtl"] .unified-floating-header .mobile-menu-overlay {
+  direction: ltr; /* Keep overlay direction LTR for proper coverage */
+}
+
+/* Language Selector Responsive RTL */
+@media (max-width: 992px) {
+  html[dir="rtl"] .unified-floating-header .modern-language-selector .language-dropdown {
+    left: -5px;
+    right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] .unified-floating-header .modern-language-selector .language-dropdown {
+    left: -8px;
+    right: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  html[dir="rtl"] .unified-floating-header .modern-language-selector .language-dropdown {
+    left: -10px;
+    right: auto;
+  }
+}
+
+/* Ensure no horizontal scroll in RTL mobile */
+html[dir="rtl"] {
+  overflow-x: hidden;
+}
+
+html[dir="rtl"] * {
+  box-sizing: border-box;
+}
+
+/* Fix mobile navigation arrows positioning - Covered by responsive breakpoints above */
+
+/* Override any conflicting mobile menu styles in RTL */
+html[dir="rtl"] .header-navigation.breakpoint-on .nav-menu {
+  left: auto !important;
+  right: -300px !important;
+  text-align: right !important;
+}
+
+html[dir="rtl"] .header-navigation.breakpoint-on .nav-menu.menu-on {
+  right: 0 !important;
+  left: auto !important;
+}
+
+/* Ensure RTL takes precedence over other mobile menu fixes */
+html[dir="rtl"] .unified-floating-header {
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .unified-floating-header * {
+  box-sizing: border-box;
+}
+
+/* Fix any layout issues with container widths in RTL mobile */
+@media (max-width: 768px) {
+  html[dir="rtl"] .container-fluid {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    overflow-x: hidden;
+  }
+  
+  html[dir="rtl"] .unified-floating-header {
+    left: 10px !important;
+    right: 10px !important;
+    width: calc(100% - 20px) !important;
+  }
+}
+
+/* Sidebar RTL */
+html[dir="rtl"] .sidebar {
+  left: auto;
+  right: 0;
+}
+
+/* Floating Header RTL */
+html[dir="rtl"] .header-actions {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .header-actions > * {
+  margin-left: 15px;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .header-actions > *:last-child {
+  margin-left: 0;
+}
+
+/* Typography RTL */
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6 {
+  font-family: 'Cairo', 'Montserrat', sans-serif;
+}
+
+html[dir="rtl"] p,
+html[dir="rtl"] span,
+html[dir="rtl"] a,
+html[dir="rtl"] li {
+  font-family: 'Cairo', 'Roboto', sans-serif;
+}
+
+/* Animations RTL */
+html[dir="rtl"] .slideInLeft {
+  animation-name: slideInRight;
+}
+
+html[dir="rtl"] .slideInRight {
+  animation-name: slideInLeft;
+}
+
+html[dir="rtl"] .fadeInLeft {
+  animation-name: fadeInRight;
+}
+
+html[dir="rtl"] .fadeInRight {
+  animation-name: fadeInLeft;
+}
+
+/* Button groups and hero buttons RTL */
+html[dir="rtl"] .hero-button {
+  direction: rtl;
+}
+
+html[dir="rtl"] .hero-button .main-btn:first-child {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .hero-button .main-btn:last-child {
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+/* Ensure proper text flow */
+html[dir="rtl"] * {
+  box-sizing: border-box;
+}
+
+/* Fix for centered hero content */
+html[dir="rtl"] .hero-content.text-center * {
+  text-align: center !important;
+}
+
+/* Navigation items spacing */
+html[dir="rtl"] .nav-menu .nav-item:first-child {
+  margin-left: 0;
+}
+
+html[dir="rtl"] .nav-menu .nav-item:last-child {
+  margin-right: 0;
+}
+
+/* Adjust floating header navigation spacing for RTL */
+html[dir="rtl"] .unified-floating-header .nav-menu {
+  gap: 25px !important;
+}
+
+html[dir="rtl"] .unified-floating-header .nav-item {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+@media (min-width: 1200px) {
+  html[dir="rtl"] .unified-floating-header .nav-menu {
+    gap: 30px !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  html[dir="rtl"] .unified-floating-header .nav-menu {
+    gap: 20px !important;
+  }
+}
+
+/* Responsive RTL adjustments */
+@media (max-width: 991px) {
+  html[dir="rtl"] .mobile-menu-container {
+    text-align: right;
+  }
+  
+  html[dir="rtl"] .mobile-nav-link {
+    text-align: right;
+  }
+}
+
+@media (max-width: 767px) {
+  html[dir="rtl"] .hero-content {
+    text-align: center;
+  }
+  
+  html[dir="rtl"] .about-inner-content {
+    flex-direction: column;
+  }
+  
+  html[dir="rtl"] .experience-box-two {
+    margin-right: 0;
+    margin-top: 30px;
+  }
+}
+
+/* Features Section RTL Layout - Simple position swap */
+html[dir="rtl"] .features-section .features-wrapper {
+  justify-content: flex-start !important;
+}
+
+html[dir="rtl"] .features-section .features-wrapper .features-bg {
+  left: auto !important;
+  right: 0 !important;
+}
+
+html[dir="rtl"] .features-section .features-wrapper .features-bgc-content-box {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}

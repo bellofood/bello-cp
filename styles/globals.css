@@ -1,0 +1,98 @@
+/* @import "slick-carousel/slick/slick.css"; */
+
+/* RTL Support */
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="ltr"] body {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Ensure proper text direction for all text elements */
+html[dir="rtl"] p,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] span,
+html[dir="rtl"] a,
+html[dir="rtl"] li {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="ltr"] p,
+html[dir="ltr"] h1,
+html[dir="ltr"] h2,
+html[dir="ltr"] h3,
+html[dir="ltr"] h4,
+html[dir="ltr"] h5,
+html[dir="ltr"] h6,
+html[dir="ltr"] span,
+html[dir="ltr"] a,
+html[dir="ltr"] li {
+  direction: ltr;
+  text-align: left;
+}
+
+/* RTL Flex layouts */
+html[dir="rtl"] .d-flex,
+html[dir="rtl"] .flex,
+html[dir="rtl"] .nav-menu,
+html[dir="rtl"] .header-actions {
+  flex-direction: row-reverse;
+}
+
+/* Ensure centered content stays centered */
+html[dir="rtl"] .text-center,
+html[dir="rtl"] .hero-content.text-center {
+  text-align: center !important;
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+.modal-content {
+  border: 0;
+}
+
+/* image popup */
+img.mfp-img {
+  box-shadow: 0 0 8px rgb(0 0 0 / 60%);
+  position: absolute;
+  max-height: 392px;
+  padding: 0 !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.mfp-img-container .mfp-content {
+  max-width: 400px !important;
+}
+.mfp-img-container .mfp-close {
+  top: -110px;
+  right: -24px;
+}
+
+.project-slider-active .slick-active .project-slider-item .video,
+.project-slider-active .slick-active .project-slider-item .content {
+  opacity: 1;
+  -webkit-transform: translate(0);
+  -ms-transform: translate(0);
+  transform: translate(0);
+}
+.project-slider-item {
+  display: flex !important;
+}
+.project-three-active .project-item-three {
+  margin: 0;
+}
+
+.active-scroll-top {
+  display: inline-block;
+}

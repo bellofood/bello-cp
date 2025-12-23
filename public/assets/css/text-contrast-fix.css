@@ -1,0 +1,94 @@
+/* Text Contrast Fix - Ensure white text on green backgrounds */
+
+/* Force white text for main-bg sections */
+.main-bg .section-title h2,
+.main-bg h2,
+.main-bg .section-title .title,
+.main-bg .title {
+  color: #ffffff !important;
+}
+
+/* Force white text for text-white sections */
+.text-white h2,
+.text-white .section-title h2,
+.text-white .title,
+.text-white .section-title .title {
+  color: #ffffff !important;
+}
+
+/* Specific fixes for features and CTA sections */
+.features-bgc-content-box.main-bg h2,
+.features-bgc-content-box.main-bg .section-title h2,
+.cta-content-box.text-white h2,
+.cta-content-box.text-white .section-title h2 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure subtitles are also visible */
+.main-bg .section-title .sub-title,
+.text-white .section-title .sub-title {
+  color: #F1D2A9 !important;
+}
+
+/* Fix for any other headings in green background sections - BUT NOT in white content boxes */
+.main-bg h1:not(.single-features-item h1):not(.text h1),
+.main-bg h3:not(.single-features-item h3):not(.text h3),
+.main-bg h4:not(.single-features-item h4):not(.text h4),
+.main-bg h5:not(.single-features-item h5):not(.text h5),
+.main-bg h6:not(.single-features-item h6):not(.text h6),
+.text-white h1:not(.single-features-item h1):not(.text h1),
+.text-white h3:not(.single-features-item h3):not(.text h3),
+.text-white h4:not(.single-features-item h4):not(.text h4),
+.text-white h5:not(.single-features-item h5):not(.text h5),
+.text-white h6:not(.single-features-item h6):not(.text h6) {
+  color: #ffffff !important;
+}
+
+/* Fix for paragraph text in these sections - BUT NOT in white content boxes */
+.main-bg p:not(.single-features-item p):not(.text p),
+.text-white p:not(.single-features-item p):not(.text p) {
+  color: #ffffff !important;
+}
+
+/* Ensure good contrast for all text elements - BUT NOT in white content boxes */
+.main-bg:not(.single-features-item):not(.text),
+.text-white:not(.single-features-item):not(.text) {
+  color: #ffffff !important;
+}
+
+/* CRITICAL: Override white text for content inside white boxes */
+.main-bg .single-features-item,
+.main-bg .single-features-item .text,
+.main-bg .single-features-item .text h5,
+.main-bg .single-features-item .text h5.title,
+.main-bg .single-features-item .text p,
+.text-white .single-features-item,
+.text-white .single-features-item .text,
+.text-white .single-features-item .text h5,
+.text-white .single-features-item .text h5.title,
+.text-white .single-features-item .text p {
+  color: #4D602C !important;
+}
+
+/* Specific fix for feature item headings */
+.main-bg .single-features-item h1,
+.main-bg .single-features-item h2,
+.main-bg .single-features-item h3,
+.main-bg .single-features-item h4,
+.main-bg .single-features-item h5,
+.main-bg .single-features-item h6,
+.text-white .single-features-item h1,
+.text-white .single-features-item h2,
+.text-white .single-features-item h3,
+.text-white .single-features-item h4,
+.text-white .single-features-item h5,
+.text-white .single-features-item h6 {
+  color: #4D602C !important;
+}
+
+/* CTA section specific background fix */
+.cta-bg-section .cta-content-box h2 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}

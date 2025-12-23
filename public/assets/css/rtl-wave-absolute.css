@@ -1,0 +1,17 @@
+/* RTL Wave Absolute Bottom Fix - Force waves to bottom of hero section */
+
+/* CRITICAL: Override all RTL wave positioning to match English exactly */
+/* Use default English hero wrapper styles */
+
+/* Use exact English wave styles - NO overrides for Arabic */
+/* Let .hero-waves use the default English CSS from style.css */
+
+/* Keep hero content above waves - this is needed */
+html[dir="rtl"] .hero-wrapper-three .hero-content {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Use default English wave animation */
+
+/* Use default English responsive styles for waves */

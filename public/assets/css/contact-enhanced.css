@@ -1,0 +1,580 @@
+/* Contact Page Enhanced Styling - All-in-One */
+
+/* Fix Section Title Spacing and Typography */
+.section-title {
+  margin-bottom: 60px !important;
+  text-align: center !important;
+}
+
+.section-title .sub-title {
+  display: block !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #4D602C !important;
+  margin-bottom: 15px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.section-title .sub-title i {
+  margin-right: 10px !important;
+  font-size: 18px !important;
+  color: #4D602C !important;
+}
+
+.section-title h2 {
+  font-size: 42px !important;
+  font-weight: 700 !important;
+  color: #2F2F2F !important;
+  margin-bottom: 20px !important;
+  line-height: 1.2 !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.section-description {
+  font-size: 18px !important;
+  color: #666666 !important;
+  line-height: 1.7 !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* Contact Info Section Spacing */
+.contact-info-section {
+  padding-top: 100px !important;
+  padding-bottom: 80px !important;
+}
+
+.contact-info-section .container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+/* Contact Info Wrapper Styling */
+.contact-info-wrapper {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 25px !important;
+  padding: 0 !important;
+  box-shadow: 0px 20px 60px rgba(77, 96, 44, 0.1) !important;
+  border: 1px solid rgba(241, 210, 169, 0.3) !important;
+  margin-top: 40px !important;
+  overflow: hidden !important;
+}
+
+/* Contact Info Cards - Natural Heights */
+.contact-info-item-professional {
+  padding: 35px 25px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+  background: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0px 20px 60px rgba(77, 96, 44, 0.08);
+  border: 1px solid rgba(241, 210, 169, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Modern Card Enhancements */
+.contact-info-item-professional::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(135deg, #4D602C 0%, #F1D2A9 50%, #4D602C 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-info-item-professional::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(241, 210, 169, 0.1), transparent);
+  transition: transform 0.6s ease;
+  transform: translateX(-100%) translateY(-100%) rotate(45deg);
+}
+
+.contact-info-item-professional:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0px 30px 80px rgba(77, 96, 44, 0.15);
+  border-color: rgba(241, 210, 169, 0.5);
+}
+
+.contact-info-item-professional:hover::before {
+  opacity: 1;
+}
+
+.contact-info-item-professional:hover::after {
+  transform: translateX(100%) translateY(100%) rotate(45deg);
+}
+
+/* Natural flexbox layout without forced heights */
+.contact-info-wrapper .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.contact-info-wrapper .col-lg-4,
+.contact-info-wrapper .col-md-6 {
+  margin-bottom: 30px !important;
+}
+
+/* Icon wrapper consistent spacing */
+.contact-info-item-professional .icon-wrapper {
+  margin-bottom: 20px !important;
+  flex-shrink: 0 !important;
+}
+
+.contact-info-item-professional .icon {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, #4D602C 0%, #6B8240 100%);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 0px 15px 30px rgba(77, 96, 44, 0.3);
+}
+
+.contact-info-item-professional .icon::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(135deg, #F1D2A9, #4D602C, #F1D2A9);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-info-item-professional:hover .icon::before {
+  opacity: 1;
+}
+
+.contact-info-item-professional .icon i {
+  font-size: 36px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.contact-info-item-professional:hover .icon {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0px 20px 40px rgba(77, 96, 44, 0.4);
+}
+
+/* Info section takes remaining space */
+.contact-info-item-professional .info {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-info-item-professional .info .title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2F2F2F;
+  margin-bottom: 18px;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contact-info-item-professional:hover .info .title {
+  color: #4D602C;
+}
+
+.contact-info-item-professional .info p {
+  font-size: 16px;
+  color: #666666;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.contact-info-item-professional .info p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.contact-info-item-professional .info a {
+  color: #666666;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
+}
+
+.contact-info-item-professional .info a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4D602C, #F1D2A9);
+  transition: width 0.3s ease;
+}
+
+.contact-info-item-professional .info a:hover {
+  color: #4D602C;
+  transform: translateY(-1px);
+}
+
+.contact-info-item-professional .info a:hover::after {
+  width: 100%;
+}
+
+/* RTL Support */
+[dir="rtl"] .contact-info-item-professional,
+[dir="rtl"] .single-info-item {
+  text-align: center;
+}
+
+[dir="rtl"] .contact-info-item-professional .info .title,
+[dir="rtl"] .single-info-item .info h4.title {
+  text-align: center;
+  font-family: "Cairo", "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+[dir="rtl"] .contact-info-item-professional .info p,
+[dir="rtl"] .single-info-item .info span {
+  text-align: center;
+  font-family: "Cairo", "Montserrat", sans-serif;
+  line-height: 1.8;
+}
+
+[dir="rtl"] .section-title h2,
+[dir="rtl"] .section-title .sub-title {
+  font-family: "Cairo", "Montserrat", sans-serif;
+  text-align: center;
+}
+
+[dir="rtl"] .section-title .sub-title i {
+  margin-left: 10px !important;
+  margin-right: 0 !important;
+}
+
+[dir="rtl"] .section-description {
+  font-family: "Cairo", "Montserrat", sans-serif !important;
+  direction: rtl !important;
+}
+
+/* Original Style Action Cards with Text Visibility Fixes */
+.single-info-item {
+  position: relative;
+  padding: 40px 35px 45px;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.single-info-item:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0px 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* Original Card Background Styles */
+.single-info-item.style-one {
+  background: linear-gradient(135deg, rgba(77, 96, 44, 0.9) 0%, rgba(107, 130, 64, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.single-info-item.style-two {
+  background: linear-gradient(135deg, rgba(77, 96, 44, 0.9) 0%, rgba(107, 130, 64, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.single-info-item.style-three {
+  background: linear-gradient(135deg, rgba(241, 210, 169, 0.9) 0%, rgba(241, 210, 169, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(77, 96, 44, 0.1);
+}
+
+/* Text Visibility Fixes for Green Cards */
+.single-info-item.style-one .info span,
+.single-info-item.style-two .info span {
+  color: #ffffff !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  margin-bottom: 25px !important;
+  font-weight: 400 !important;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.single-info-item.style-one .info h4.title,
+.single-info-item.style-two .info h4.title {
+  color: #ffffff !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  margin-bottom: 20px !important;
+  line-height: 1.3 !important;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3) !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.single-info-item.style-one .info p,
+.single-info-item.style-two .info p {
+  color: #ffffff !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  margin-bottom: 25px !important;
+  font-weight: 400 !important;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* Text Styling for Cream Card */
+.single-info-item.style-three .info span {
+  color: #4D602C !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  margin-bottom: 25px !important;
+  font-weight: 400 !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.single-info-item.style-three .info h4.title {
+  color: #2F2F2F !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  margin-bottom: 20px !important;
+  line-height: 1.3 !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.single-info-item.style-three .info p {
+  color: #666666 !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  margin-bottom: 25px !important;
+  font-weight: 400 !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* Button Styling for Green Cards */
+.single-info-item.style-one .info .btn,
+.single-info-item.style-one .info .main-btn,
+.single-info-item.style-one .info a.main-btn,
+.single-info-item.style-two .info .btn,
+.single-info-item.style-two .info .main-btn,
+.single-info-item.style-two .info a.main-btn {
+  background: #ffffff !important;
+  color: #4D602C !important;
+  border: 2px solid #ffffff !important;
+  padding: 12px 30px !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  text-transform: capitalize !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2) !important;
+  font-family: "Montserrat", sans-serif !important;
+  text-shadow: none !important;
+}
+
+.single-info-item.style-one .info .btn:hover,
+.single-info-item.style-one .info .main-btn:hover,
+.single-info-item.style-one .info a.main-btn:hover,
+.single-info-item.style-two .info .btn:hover,
+.single-info-item.style-two .info .main-btn:hover,
+.single-info-item.style-two .info a.main-btn:hover {
+  background: #F1D2A9 !important;
+  color: #2F2F2F !important;
+  border-color: #F1D2A9 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Button Styling for Cream Card */
+.single-info-item.style-three .info .btn,
+.single-info-item.style-three .info .main-btn,
+.single-info-item.style-three .info a.main-btn {
+  background: #4D602C !important;
+  color: #ffffff !important;
+  border: 2px solid #4D602C !important;
+  padding: 12px 30px !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  text-transform: capitalize !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  box-shadow: 0px 4px 15px rgba(77, 96, 44, 0.3) !important;
+  font-family: "Montserrat", sans-serif !important;
+  text-shadow: none !important;
+}
+
+.single-info-item.style-three .info .btn:hover,
+.single-info-item.style-three .info .main-btn:hover,
+.single-info-item.style-three .info a.main-btn:hover {
+  background: #6B8240 !important;
+  color: #ffffff !important;
+  border-color: #6B8240 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0px 6px 20px rgba(107, 130, 64, 0.4) !important;
+}
+
+/* WhatsApp Icon Enhancement */
+.single-info-item .info .main-btn i.fab.fa-whatsapp {
+  font-size: 16px !important;
+  margin-right: 8px !important;
+}
+
+/* RTL Support for Action Cards */
+[dir="rtl"] .single-info-item .info h4.title {
+  font-family: "Cairo", "Montserrat", sans-serif !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] .single-info-item .info span,
+[dir="rtl"] .single-info-item .info p {
+  font-family: "Cairo", "Montserrat", sans-serif !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] .single-info-item .info .main-btn i.fab.fa-whatsapp {
+  margin-right: 0 !important;
+  margin-left: 8px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 32px !important;
+  }
+  
+  .section-title .sub-title {
+    font-size: 14px !important;
+  }
+  
+  .section-description {
+    font-size: 16px !important;
+  }
+  
+  .contact-info-section {
+    padding-top: 80px !important;
+    padding-bottom: 60px !important;
+  }
+  
+  .contact-info-item-professional {
+    height: 280px !important;
+    min-height: 280px !important;
+    max-height: 280px !important;
+    padding: 25px 15px !important;
+  }
+  
+  .contact-info-item-professional .info .title {
+    font-size: 18px !important;
+  }
+  
+  .contact-info-item-professional .info p {
+    font-size: 14px !important;
+  }
+  
+  .single-info-item {
+    min-height: auto;
+    padding: 30px 25px 35px;
+  }
+}
+
+@media (max-width: 575px) {
+  .section-title h2 {
+    font-size: 28px !important;
+  }
+  
+  .section-title .sub-title {
+    font-size: 13px !important;
+  }
+  
+  .section-description {
+    font-size: 15px !important;
+  }
+  
+  .contact-info-item-professional {
+    height: 260px !important;
+    min-height: 260px !important;
+    max-height: 260px !important;
+    padding: 20px 15px !important;
+  }
+  
+  .contact-info-item-professional .icon {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  
+  .contact-info-item-professional .icon i {
+    font-size: 28px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .contact-info-item-professional {
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
+    padding: 30px 20px !important;
+  }
+  
+  .single-info-item {
+    margin-bottom: 30px;
+  }
+}
+
+/* Animation Enhancements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.contact-info-item-professional:hover .icon {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Remove any conflicting styles */
+.contact-info-item-professional * {
+  box-sizing: border-box;
+}
+
+/* Force consistent layout */
+.contact-info-wrapper .row > div {
+  display: flex;
+  align-items: stretch;
+}
+
+.contact-info-wrapper .row > div > .contact-info-item-professional {
+  width: 100%;
+  height: 320px;
+  min-height: 320px;
+  max-height: 320px;
+}

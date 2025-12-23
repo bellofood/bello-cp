@@ -1,0 +1,270 @@
+/* RTL Contact Page Fixes - Specific Overrides */
+
+/* Force proper RTL layout for Arabic */
+[dir="rtl"] .contact-info-section,
+[dir="rtl"] .info-section {
+  direction: rtl;
+  text-align: center;
+}
+
+/* Reset and fix contact cards in RTL */
+[dir="rtl"] .contact-info-item-professional {
+  direction: ltr !important;
+  text-align: center !important;
+  padding: 40px 20px !important;
+  height: 320px !important;
+  min-height: 320px !important;
+  max-height: 320px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 30px !important;
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  box-shadow: 0px 15px 40px rgba(77, 96, 44, 0.1) !important;
+  border: 1px solid rgba(241, 210, 169, 0.3) !important;
+}
+
+/* Icon styling for RTL */
+[dir="rtl"] .contact-info-item-professional .icon-wrapper {
+  margin-bottom: 20px !important;
+  text-align: center !important;
+}
+
+[dir="rtl"] .contact-info-item-professional .icon {
+  width: 80px !important;
+  height: 80px !important;
+  margin: 0 auto !important;
+  background: linear-gradient(135deg, #4D602C 0%, #6B8240 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+[dir="rtl"] .contact-info-item-professional .icon i {
+  font-size: 30px !important;
+  color: #ffffff !important;
+}
+
+/* Text content styling for RTL */
+[dir="rtl"] .contact-info-item-professional .info {
+  text-align: center !important;
+  width: 100% !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] .contact-info-item-professional .info .title {
+  font-family: "Cairo", "Montserrat", sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #2F2F2F !important;
+  margin-bottom: 15px !important;
+  text-align: center !important;
+  line-height: 1.4 !important;
+}
+
+[dir="rtl"] .contact-info-item-professional .info p {
+  font-family: "Cairo", "Montserrat", sans-serif !important;
+  font-size: 15px !important;
+  color: #666666 !important;
+  line-height: 1.8 !important;
+  margin-bottom: 8px !important;
+  text-align: center !important;
+}
+
+[dir="rtl"] .contact-info-item-professional .info a {
+  font-family: "Cairo", "Montserrat", sans-serif !important;
+  color: #666666 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+}
+
+[dir="rtl"] .contact-info-item-professional .info a:hover {
+  color: #4D602C !important;
+}
+
+/* Action cards (bottom section) RTL fixes */
+[dir="rtl"] .single-info-item {
+  direction: ltr !important;
+  text-align: center !important;
+  padding: 35px 20px 40px !important;
+  min-height: 350px !important;
+  border-radius: 20px !important;
+  margin-bottom: 30px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+[dir="rtl"] .single-info-item .info {
+  text-align: center !important;
+  width: 100% !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] .single-info-item .info span {
+  font-family: "Cairo", "Montserrat", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 12px !important;
+  display: block !important;
+  text-align: center !important;
+}
+
+[dir="rtl"] .single-info-item .info h4.title {
+  font-family: "Cairo", "Montserrat", sans-serif !important;
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  line-height: 1.6 !important;
+  margin-bottom: 25px !important;
+  text-align: center !important;
+}
+
+[dir="rtl"] .single-info-item .info .main-btn {
+  font-family: "Cairo", "Montserrat", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  padding: 15px 30px !important;
+  border-radius: 25px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin: 0 auto !important;
+  display: inline-block !important;
+}
+
+/* Section titles RTL */
+[dir="rtl"] .section-title {
+  text-align: center !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] .section-title h2 {
+  font-family: "Cairo", "Montserrat", sans-serif !important;
+  font-size: 38px !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+}
+
+[dir="rtl"] .section-title .sub-title {
+  font-family: "Cairo", "Montserrat", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+}
+
+[dir="rtl"] .section-description {
+  font-family: "Cairo", "Montserrat", sans-serif !important;
+  text-align: center !important;
+  line-height: 1.8 !important;
+  margin: 20px auto 0 !important;
+}
+
+/* Container and row fixes for RTL */
+[dir="rtl"] .contact-info-wrapper {
+  direction: rtl !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(77, 96, 44, 0.1) !important;
+  overflow: hidden !important;
+}
+
+[dir="rtl"] .contact-info-wrapper > .row {
+  margin: 0 !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] .contact-info-wrapper > .row > .col-lg-4 {
+  padding: 0 !important;
+}
+
+/* Remove borders between cards in RTL */
+[dir="rtl"] .contact-info-wrapper > .row > .col-lg-4:not(:last-child) {
+  border-right: none !important;
+  border-left: 1px solid rgba(77, 96, 44, 0.1) !important;
+}
+
+/* Mobile responsive for RTL */
+@media (max-width: 991px) {
+  [dir="rtl"] .contact-info-wrapper > .row > .col-lg-4:not(:last-child) {
+    border-left: none !important;
+    border-bottom: 1px solid rgba(77, 96, 44, 0.1) !important;
+  }
+  
+  [dir="rtl"] .contact-info-item-professional {
+    min-height: auto !important;
+    padding: 35px 20px !important;
+  }
+  
+  [dir="rtl"] .single-info-item {
+    min-height: auto !important;
+    padding: 30px 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .contact-info-item-professional .info .title {
+    font-size: 18px !important;
+  }
+  
+  [dir="rtl"] .single-info-item .info h4.title {
+    font-size: 17px !important;
+  }
+  
+  [dir="rtl"] .section-title h2 {
+    font-size: 32px !important;
+  }
+}
+
+/* Hover effects maintained for RTL */
+[dir="rtl"] .contact-info-item-professional:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0px 25px 60px rgba(77, 96, 44, 0.15) !important;
+}
+
+[dir="rtl"] .single-info-item:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Force equal card heights globally */
+.contact-info-wrapper .row {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.contact-info-wrapper .col-lg-4,
+.contact-info-wrapper .col-md-6 {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.contact-info-item-professional {
+  height: 320px !important;
+  min-height: 320px !important;
+  max-height: 320px !important;
+  width: 100% !important;
+}
+
+/* Flexbox alignment fixes */
+[dir="rtl"] .row.justify-content-center {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+}
+
+[dir="rtl"] .col-lg-4 {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+[dir="rtl"] .col-lg-4 .contact-info-item-professional {
+  width: 100% !important;
+  height: 320px !important;
+  min-height: 320px !important;
+  max-height: 320px !important;
+}

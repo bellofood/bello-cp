@@ -1,0 +1,171 @@
+/* Call Button Styling */
+
+#call-button {
+  position: fixed !important;
+  bottom: 120px !important;
+  right: 30px !important;
+  width: 70px !important;
+  height: 70px !important;
+  background: linear-gradient(135deg, #4D602C 0%, #3a4821 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 9999 !important;
+  box-shadow: 0 4px 20px rgba(77, 96, 44, 0.4) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+#call-button:hover {
+  transform: translateY(-5px) scale(1.05) !important;
+  box-shadow: 0 8px 30px rgba(77, 96, 44, 0.6) !important;
+  background: linear-gradient(135deg, #5a7133 0%, #4D602C 100%) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+#call-button:active {
+  transform: translateY(-2px) scale(1.02) !important;
+  transition: transform 0.1s ease !important;
+}
+
+#call-button svg {
+  width: 28px !important;
+  height: 28px !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) !important;
+  transition: transform 0.3s ease !important;
+}
+
+#call-button:hover svg {
+  transform: scale(1.1) !important;
+}
+
+/* Pulse animation */
+#call-button::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -4px !important;
+  left: -4px !important;
+  right: -4px !important;
+  bottom: -4px !important;
+  background: linear-gradient(45deg, #4D602C, transparent, #4D602C) !important;
+  border-radius: 50% !important;
+  z-index: -1 !important;
+  opacity: 0 !important;
+  animation: callPulse 3s ease-in-out infinite !important;
+}
+
+@keyframes callPulse {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+}
+
+/* Floating animation */
+#call-button {
+  animation: callFloat 4s ease-in-out infinite !important;
+}
+
+@keyframes callFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+#call-button:hover {
+  animation-play-state: paused !important;
+}
+
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  #call-button {
+    bottom: 100px !important;
+    right: 20px !important;
+    width: 60px !important;
+    height: 60px !important;
+  }
+  
+  #call-button svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  #call-button {
+    bottom: 85px !important;
+    right: 15px !important;
+    width: 55px !important;
+    height: 55px !important;
+  }
+  
+  #call-button svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+}
+
+/* RTL Support */
+html[dir="rtl"] #call-button {
+  right: auto !important;
+  left: 30px !important;
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] #call-button {
+    left: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html[dir="rtl"] #call-button {
+    left: 15px !important;
+  }
+}
+
+/* Smooth entrance animation */
+#call-button {
+  animation: callEntrance 0.8s cubic-bezier(0.4, 0, 0.2, 1), callFloat 4s ease-in-out 0.8s infinite !important;
+}
+
+@keyframes callEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(180deg);
+  }
+  70% {
+    transform: scale(1.1) rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Enhanced glassmorphism effect */
+#call-button {
+  background: linear-gradient(135deg, 
+    rgba(77, 96, 44, 0.95) 0%, 
+    rgba(58, 72, 33, 0.9) 100%) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+}
+
+/* Professional micro-interactions */
+#call-button {
+  will-change: transform, box-shadow !important;
+}
+

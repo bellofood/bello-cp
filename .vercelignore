@@ -1,0 +1,27 @@
+# Documentation and guides
+*.md
+*.txt
+SETUP_*.md
+HOMEPAGE_*.md
+HOW_TO_*.md
+*_GUIDE.md
+*_REFERENCE.md
+*_CHECKLIST.txt
+
+# SQL files
+*.sql
+
+# Development files
+scripts/
+uploads/cvs/
+
+# Source files not needed for build
+public/assets/scss/
+
+# Git
+.git/
+.gitignore
+
+# Dependencies will be reinstalled
+node_modules/
+
