@@ -17,12 +17,18 @@ const AdPopup = () => {
         .then(res => res.json())
         .then(data => {
           console.log('Ad settings fetched:', data);
-          if (data.success && data.adImage) {
-            // Add timestamp to prevent caching
-            const imageUrl = data.adImage.includes('?') 
-              ? `${data.adImage}&t=${Date.now()}`
-              : `${data.adImage}?t=${Date.now()}`;
-            setAdImage(imageUrl);
+          if (data.success) {
+            if (data.adEnabled === false) {
+              console.log('Ad popup is disabled from settings');
+              return;
+            }
+            if (data.adImage) {
+              // Add timestamp to prevent caching
+              const imageUrl = data.adImage.includes('?') 
+                ? `${data.adImage}&t=${Date.now()}`
+                : `${data.adImage}?t=${Date.now()}`;
+              setAdImage(imageUrl);
+            }
           }
           // Show the popup after a short delay
           setTimeout(() => {

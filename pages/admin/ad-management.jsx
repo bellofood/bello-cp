@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 export default function AdManagement() {
   const router = useRouter();
   const [currentAdImage, setCurrentAdImage] = useState('');
+  const [isAdEnabled, setIsAdEnabled] = useState(true);
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState('');
   const [isUploading, setIsUploading] = useState(false);
@@ -42,6 +43,7 @@ export default function AdManagement() {
           : `${data.adImage}?t=${Date.now()}`;
         console.log('Setting ad image to:', imageUrl);
         setCurrentAdImage(imageUrl);
+        setIsAdEnabled(data.adEnabled !== false);
       } else {
         console.error('Failed to fetch ad:', data);
       }
@@ -125,6 +127,26 @@ export default function AdManagement() {
       setMessage({ type: 'error', text: 'An error occurred while uploading' });
     } finally {
       setIsUploading(false);
+    }
+  };
+
+  const toggleAd = async () => {
+    try {
+      const response = await fetch('/api/ad-settings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ adEnabled: !isAdEnabled })
+      });
+      const data = await response.json();
+      if (data.success) {
+        setIsAdEnabled(!isAdEnabled);
+        setMessage({ type: 'success', text: `Ad feature has been ${!isAdEnabled ? 'enabled' : 'disabled'} successfully.` });
+      } else {
+        setMessage({ type: 'error', text: data.error || 'Failed to toggle ad feature' });
+      }
+    } catch (error) {
+      console.error('Toggle error:', error);
+      setMessage({ type: 'error', text: 'An error occurred while toggling the ad feature.' });
     }
   };
 
@@ -225,9 +247,44 @@ export default function AdManagement() {
             padding: '30px',
             boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
           }}>
-            <h2 style={{ marginTop: 0, marginBottom: '20px', color: '#333', fontSize: '22px' }}>
-              Current Advertisement
-            </h2>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+              <h2 style={{ margin: 0, color: '#333', fontSize: '22px' }}>
+                Current Advertisement
+              </h2>
+              <button
+                onClick={toggleAd}
+                style={{
+                  padding: '8px 16px',
+                  background: isAdEnabled ? '#d32f2f' : '#5a7249',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                  fontWeight: '600',
+                  fontSize: '14px',
+                  transition: 'all 0.3s'
+                }}
+              >
+                {isAdEnabled ? 'Disable Ad Feature' : 'Enable Ad Feature'}
+              </button>
+            </div>
+            
+            {!isAdEnabled && (
+              <div style={{
+                padding: '10px 15px',
+                marginBottom: '15px',
+                background: '#fef3c7',
+                border: '1px solid #fde68a',
+                borderRadius: '8px',
+                color: '#92400e',
+                fontSize: '14px',
+                fontWeight: '500'
+              }}>
+                <i className="fas fa-exclamation-triangle" style={{ marginRight: '8px' }}></i>
+                The ad popup is currently disabled and will not be displayed to users.
+              </div>
+            )}
+
             {isLoading ? (
               <div style={{
                 border: '2px solid #e0e0e0',

@@ -13,20 +13,22 @@ export default async function handler(req, res) {
       // Fetch the current ad image setting
       const { data, error } = await supabase
         .from('site_settings')
-        .select('ad_image')
+        .select('*')
         .single();
 
       if (error) {
         // If no settings exist yet, return default
         return res.status(200).json({ 
           success: true, 
-          adImage: '/assets/images/promo-banner.jpg' 
+          adImage: '/assets/images/promo-banner.jpg',
+          adEnabled: true
         });
       }
 
       res.status(200).json({ 
         success: true, 
-        adImage: data?.ad_image || '/assets/images/promo-banner.jpg' 
+        adImage: data?.ad_image || '/assets/images/promo-banner.jpg',
+        adEnabled: data?.ad_enabled !== false
       });
     } catch (error) {
       console.error('Error fetching ad settings:', error);
@@ -34,10 +36,10 @@ export default async function handler(req, res) {
     }
   } else if (req.method === 'POST') {
     try {
-      const { adImage } = req.body;
+      const { adImage, adEnabled } = req.body;
 
-      if (!adImage) {
-        return res.status(400).json({ success: false, error: 'Ad image path is required' });
+      if (adImage === undefined && adEnabled === undefined) {
+        return res.status(400).json({ success: false, error: 'No data to update' });
       }
 
       // Check if settings exist
@@ -47,17 +49,23 @@ export default async function handler(req, res) {
         .single();
 
       let result;
+      
+      const payload = { updated_at: new Date().toISOString() };
+      if (adImage !== undefined) payload.ad_image = adImage;
+      if (adEnabled !== undefined) payload.ad_enabled = adEnabled;
+
       if (existingData) {
         // Update existing settings
         result = await supabase
           .from('site_settings')
-          .update({ ad_image: adImage, updated_at: new Date().toISOString() })
+          .update(payload)
           .eq('id', existingData.id);
       } else {
         // Insert new settings
+        delete payload.updated_at;
         result = await supabase
           .from('site_settings')
-          .insert({ ad_image: adImage });
+          .insert(payload);
       }
 
       if (result.error) {
@@ -66,8 +74,9 @@ export default async function handler(req, res) {
 
       res.status(200).json({ 
         success: true, 
-        message: 'Ad image updated successfully',
-        adImage 
+        message: 'Ad settings updated successfully',
+        adImage,
+        adEnabled
       });
     } catch (error) {
       console.error('Error updating ad settings:', error);
