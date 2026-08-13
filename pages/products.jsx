@@ -4,6 +4,70 @@ import Link from "next/link";
 import { useTranslation } from 'next-i18next';
 import { useState, useEffect } from 'react';
 
+// Logo shown until the real image is available and successfully loaded
+const IMAGE_PLACEHOLDER = '/assets/images/logo/logo.svg';
+
+// Renders an image, falling back to the logo while the backend image
+// is missing, still loading, or failed to load.
+const ImageWithLogoFallback = ({ src, alt, style }) => {
+  const [displaySrc, setDisplaySrc] = useState(IMAGE_PLACEHOLDER);
+
+  useEffect(() => {
+    if (!src) {
+      setDisplaySrc(IMAGE_PLACEHOLDER);
+      return;
+    }
+
+    // Try the url as given, then without its cache-busting query, then the logo
+    const candidates = [src, src.split('?')[0]].filter(
+      (url, index, all) => all.indexOf(url) === index
+    );
+
+    // Preload so the logo stays visible until the real image is ready,
+    // which avoids any broken-image flash.
+    let cancelled = false;
+    const tryLoad = (index) => {
+      if (cancelled) return;
+      if (index >= candidates.length) {
+        setDisplaySrc(IMAGE_PLACEHOLDER);
+        return;
+      }
+      const preloader = new window.Image();
+      preloader.onload = () => {
+        if (!cancelled) setDisplaySrc(candidates[index]);
+      };
+      preloader.onerror = () => tryLoad(index + 1);
+      preloader.src = candidates[index];
+    };
+    tryLoad(0);
+
+    return () => {
+      cancelled = true;
+    };
+  }, [src]);
+
+  // The logo is wide (249x143), so it must be contained rather than cropped
+  const isPlaceholder = displaySrc === IMAGE_PLACEHOLDER;
+
+  return (
+    <img
+      src={displaySrc}
+      alt={alt}
+      style={
+        isPlaceholder
+          ? { ...style, objectFit: 'contain', padding: '10px', boxSizing: 'border-box' }
+          : style
+      }
+      onError={() => {
+        // Guarded so a failing placeholder can never loop
+        if (displaySrc !== IMAGE_PLACEHOLDER) {
+          setDisplaySrc(IMAGE_PLACEHOLDER);
+        }
+      }}
+    />
+  );
+};
+
 const Products = () => {
   const { t } = useTranslation('common');
   
@@ -71,12 +135,13 @@ const Products = () => {
             return `${url}${separator}_refresh=${timestamp}`;
           };
           
+          // No hardcoded fallbacks: a missing url keeps the logo placeholder
           const newCategoryImages = {
-            'all': addCacheBuster(data.images['category-all'] || '/assets/images/products/GLASS JARS/Whole Green Olives .png'),
-            'green-olives': addCacheBuster(data.images['category-green-olives'] || '/assets/images/products/GLASS JARS/Whole Green Olives .png'),
-            'black-olives': addCacheBuster(data.images['category-black-olives'] || '/assets/images/products/GLASS JARS/Whole Black Olives.png'),
-            'peppers': addCacheBuster(data.images['category-peppers'] || '/assets/images/products/GLASS JARS/pepperoncini Pepper.png'),
-            'artichokes': addCacheBuster(data.images['category-pickles'] || '/assets/images/products/GLASS JARS/Artichoke Hearts .png')
+            'all': addCacheBuster(data.images['category-all']),
+            'green-olives': addCacheBuster(data.images['category-green-olives']),
+            'black-olives': addCacheBuster(data.images['category-black-olives']),
+            'peppers': addCacheBuster(data.images['category-peppers']),
+            'artichokes': addCacheBuster(data.images['category-pickles'])
           };
           
           setCategoryImages(newCategoryImages);
@@ -88,14 +153,8 @@ const Products = () => {
         }
       } catch (error) {
         console.error('Error fetching category images:', error);
-        // Use default images if fetch fails
-        setCategoryImages({
-          'all': '/assets/images/products/GLASS JARS/Whole Green Olives .png',
-          'green-olives': '/assets/images/products/GLASS JARS/Whole Green Olives .png',
-          'black-olives': '/assets/images/products/GLASS JARS/Whole Black Olives.png',
-          'peppers': '/assets/images/products/GLASS JARS/pepperoncini Pepper.png',
-          'artichokes': '/assets/images/products/GLASS JARS/Artichoke Hearts .png'
-        });
+        // Keep the logo placeholder instead of showing unrelated images
+        setCategoryImages({});
       }
     };
 
@@ -109,11 +168,11 @@ const Products = () => {
 
   // Category data - updated to match database categories with dynamic images
   const categories = [
-    { id: 'all', name: 'All Products', image: categoryImages['all'] || '/assets/images/products/GLASS JARS/Whole Green Olives .png' },
-    { id: 'green-olives', name: t('productsPage.categories.greenOlives'), image: categoryImages['green-olives'] || '/assets/images/products/GLASS JARS/Whole Green Olives .png' },
-    { id: 'black-olives', name: t('productsPage.categories.blackOlives'), image: categoryImages['black-olives'] || '/assets/images/products/GLASS JARS/Whole Black Olives.png' },
-    { id: 'peppers', name: t('productsPage.categories.peppers'), image: categoryImages['peppers'] || '/assets/images/products/GLASS JARS/pepperoncini Pepper.png' },
-    { id: 'artichokes', name: t('productsPage.categories.picklesVegetables'), image: categoryImages['artichokes'] || '/assets/images/products/GLASS JARS/Artichoke Hearts .png' }
+    { id: 'all', name: 'All Products', image: categoryImages['all'] },
+    { id: 'green-olives', name: t('productsPage.categories.greenOlives'), image: categoryImages['green-olives'] },
+    { id: 'black-olives', name: t('productsPage.categories.blackOlives'), image: categoryImages['black-olives'] },
+    { id: 'peppers', name: t('productsPage.categories.peppers'), image: categoryImages['peppers'] },
+    { id: 'artichokes', name: t('productsPage.categories.picklesVegetables'), image: categoryImages['artichokes'] }
   ];
 
   // Helper function to get current view for a specific product
@@ -593,9 +652,9 @@ const Products = () => {
       <div key={productKey} className="col-xl-3 col-lg-4 col-md-6 col-sm-12">
       <div className="product-card mb-40 wow fadeInUp" data-wow-delay={`${0.1 + index * 0.05}s`}>
         <div className="product-image">
-            <img 
-              src={getCurrentProductImage(product)} 
-              alt={productName} 
+            <ImageWithLogoFallback
+              src={getCurrentProductImage(product)}
+              alt={productName}
             />
         </div>
         <div className="product-info">
@@ -790,26 +849,15 @@ const Products = () => {
                       data-wow-delay={`${0.1 + index * 0.1}s`}
                     >
                       <div className="category-tab-image">
-                        <img 
+                        <ImageWithLogoFallback
                           key={`${category.id}-${imageRefreshKey}-${category.image}`}
-                          src={category.image} 
+                          src={category.image}
                           alt={category.name}
                           style={{
                             display: 'block',
                             width: '100%',
                             height: '100%',
                             objectFit: 'cover'
-                          }}
-                          onLoad={() => {
-                            console.log(`✅ Image loaded: ${category.id} - ${category.image}`);
-                          }}
-                          onError={(e) => {
-                            console.error(`❌ Image failed to load: ${category.id} - ${category.image}`);
-                            // Fallback to default if Supabase image fails
-                            const fallback = category.image.split('?')[0];
-                            if (e.target.src !== fallback) {
-                              e.target.src = fallback;
-                            }
                           }}
                         />
                       </div>
