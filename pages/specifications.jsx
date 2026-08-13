@@ -21,6 +21,7 @@ const Specifications = () => {
     'glass-jars': {
       title: t('specificationsPage.packages.glassJars.title'),
       description: t('specificationsPage.packages.glassJars.description'),
+      image: '/assets/images/specifications/jar.png',
       specs: [
         { size: '370ml', grossWeight: '570g', netWeight: '370g', drainedWeight: '200g' },
         { size: '467ml', grossWeight: '700g', netWeight: '467g', drainedWeight: '280g' },
@@ -31,6 +32,7 @@ const Specifications = () => {
     'cans': {
       title: t('specificationsPage.packages.cans.title'),
       description: t('specificationsPage.packages.cans.description'),
+      image: '/assets/images/specifications/can.png',
       specs: [
         { size: 'Easy open 65mm', grossWeight: '330g', netWeight: '300g', drainedWeight: '110g (Whole/Stuffed)' },
         { size: 'Easy open 73mm', grossWeight: '440g', netWeight: '400g', drainedWeight: '200g (Whole/Stuffed)' },
@@ -43,6 +45,7 @@ const Specifications = () => {
     'vacuum-bags': {
       title: t('specificationsPage.packages.vacuumBags.title'),
       description: t('specificationsPage.packages.vacuumBags.description'),
+      image: '/assets/images/specifications/VACUUM%20BAGS.png',
       specs: [
         { size: '1kg', grossWeight: '1250g', netWeight: '1200g', drainedWeight: '1000g' },
         { size: '1.5kg', grossWeight: '1750g', netWeight: '1700g', drainedWeight: '1500g' },
@@ -52,6 +55,7 @@ const Specifications = () => {
     'plastic-buckets': {
       title: t('specificationsPage.packages.plasticBuckets.title'),
       description: t('specificationsPage.packages.plasticBuckets.description'),
+      image: '/assets/images/specifications/PLASTIC%20BUCKETS.png',
       specs: [
         { size: '5kg', grossWeight: '9.5kg', netWeight: '9kg', drainedWeight: '5kg' },
         { size: '10kg', grossWeight: '17.5kg', netWeight: '17kg', drainedWeight: '10kg' }
@@ -60,6 +64,7 @@ const Specifications = () => {
     'barrels': {
       title: t('specificationsPage.packages.barrels.title'),
       description: t('specificationsPage.packages.barrels.description'),
+      image: '/assets/images/specifications/BARRELS.png',
       specs: [
         { size: 'Whole', grossWeight: '260 kg', netWeight: '250 kg', drainedWeight: '160 kg' },
         { size: 'Sliced', grossWeight: '260 kg', netWeight: '250 kg', drainedWeight: '120 kg' },
@@ -70,6 +75,7 @@ const Specifications = () => {
     'pet-packs': {
       title: t('specificationsPage.packages.petPacks.title'),
       description: t('specificationsPage.packages.petPacks.description'),
+      image: '/assets/images/specifications/PET%20PLASTIC%20JARS.png',
       specs: [
         { size: '3 L', grossWeight: '3300 g', netWeight: '3000 g', drainedWeight: '1500 g' },
         { size: '4 L', grossWeight: '4000 g', netWeight: '3780 g', drainedWeight: '1500 - 2000 g' }
@@ -169,39 +175,29 @@ const Specifications = () => {
                       <div 
                         className="product-image-container"
                         style={{
-                          background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+                          background: '#ffffff',
                           borderRadius: '20px',
-                          padding: '40px',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          minHeight: '400px',
+                          padding: '0',
+                          height: '450px',
                           boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
                           position: 'relative',
                           overflow: 'hidden'
                         }}
                       >
-                        {/* Decorative background */}
-                        <div style={{
-                          position: 'absolute',
-                          top: '-50px',
-                          right: '-50px',
-                          width: '200px',
-                          height: '200px',
-                          borderRadius: '50%',
-                          background: 'rgba(90, 114, 73, 0.05)'
-                        }} />
-                        
-                        <img 
-                          src={`/assets/images/products/${currentPackage.toUpperCase().replace('-', ' ')}/default.png`}
+                        <img
+                          key={currentPackage}
+                          src={currentSpecs.image}
                           alt={currentSpecs.title}
                           style={{
-                            maxWidth: '100%',
-                            maxHeight: '350px',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
                             objectFit: 'contain',
-                            position: 'relative',
-                            zIndex: 1,
-                            filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.15))'
+                            objectPosition: 'center',
+                            display: 'block',
+                            borderRadius: '20px'
                           }}
                           onError={(e) => {
                             e.target.src = '/assets/images/products/rate.png';
