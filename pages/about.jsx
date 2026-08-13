@@ -315,10 +315,10 @@ const About = () => {
           </div>
                     </div>
                   </div>
-          {/* Features Grid - Responsive and Aligned */}
-          <div className="row features-grid-wrapper">
-            <div className="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
-              <div className="features-thumb-item-two enhanced-feature-box h-100 wow fadeInDown" data-wow-delay=".2s">
+          {/* Features Slider - Responsive and Aligned */}
+          <Slider {...sliderProps.featuresSlider} className="features-slider">
+            <div className="features-slide-item">
+              <div className="features-thumb-item-two enhanced-feature-box h-100">
                 <div className="text">
                   <div className="icon">
                     <img src="/assets/images/icon/001-02.png" alt="Global Reach Icon" />
@@ -328,9 +328,9 @@ const About = () => {
                 </div>
               </div>
             </div>
-            
-            <div className="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
-              <div className="features-thumb-item-two enhanced-feature-box h-100 wow fadeInUp" data-wow-delay=".25s">
+
+            <div className="features-slide-item">
+              <div className="features-thumb-item-two enhanced-feature-box h-100">
                 <div className="text">
                   <div className="icon">
                     <img src="/assets/images/icon/002-02.png" alt="Certified Quality Icon" />
@@ -340,9 +340,9 @@ const About = () => {
                 </div>
               </div>
             </div>
-            
-            <div className="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
-              <div className="features-thumb-item-two enhanced-feature-box h-100 wow fadeInDown" data-wow-delay=".3s">
+
+            <div className="features-slide-item">
+              <div className="features-thumb-item-two enhanced-feature-box h-100">
                 <div className="text">
                   <div className="icon">
                     <img src="/assets/images/icon/001-04.png" alt="Unmatched Variety Icon" />
@@ -352,9 +352,9 @@ const About = () => {
                 </div>
               </div>
             </div>
-            
-            <div className="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
-              <div className="features-thumb-item-two enhanced-feature-box h-100 wow fadeInUp" data-wow-delay=".35s">
+
+            <div className="features-slide-item">
+              <div className="features-thumb-item-two enhanced-feature-box h-100">
                 <div className="text">
                   <div className="icon">
                     <img src="/assets/images/icon/001-03.png" alt="Flexible Packaging Icon" />
@@ -364,10 +364,9 @@ const About = () => {
                 </div>
               </div>
             </div>
-            
-            {/* Fifth box centered */}
-            <div className="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
-              <div className="features-thumb-item-two enhanced-feature-box h-100 wow fadeInDown" data-wow-delay=".4s">
+
+            <div className="features-slide-item">
+              <div className="features-thumb-item-two enhanced-feature-box h-100">
                 <div className="text">
                   <div className="icon">
                     <img src="/assets/images/icon/001-05.png" alt="Logistics Strength Icon" />
@@ -377,10 +376,9 @@ const About = () => {
                 </div>
               </div>
             </div>
-            
-            {/* Sixth box - Private Labels */}
-            <div className="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
-              <div className="features-thumb-item-two enhanced-feature-box h-100 wow fadeInUp" data-wow-delay=".45s">
+
+            <div className="features-slide-item">
+              <div className="features-thumb-item-two enhanced-feature-box h-100">
                 <div className="text">
                   <div className="icon">
                     <i className="fas fa-tags" style={{ fontSize: '21px', color: '#ffffff' }}></i>
@@ -390,7 +388,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </Slider>
         </div>
       </section>
       {/*====== End Important Highlights Section ======*/}

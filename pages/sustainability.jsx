@@ -87,9 +87,9 @@ const Sustainability = () => {
                   <i className="flaticon-plant" />
                   {t('sustainabilityPage.commitment.title')}
                 </span>
-                <h2>Our Core Values</h2>
+                <h2>{t('sustainabilityPage.commitment.heading')}</h2>
                 <p style={{ marginTop: '20px', fontSize: '17px', color: '#666' }}>
-                  The principles that guide everything we do
+                  {t('sustainabilityPage.commitment.subheading')}
                 </p>
               </div>
             </div>
@@ -106,12 +106,14 @@ const Sustainability = () => {
               ];
               
               return (
-                <div key={index} className="col-lg-6 col-md-6 col-sm-12">
-                  <div 
-                    className="value-card-horizontal mb-40 wow fadeInUp" 
+                <div key={index} className="col-lg-6 col-md-6 col-sm-12 mb-40 d-flex">
+                  <div
+                    className="value-card-horizontal wow fadeInUp"
                     data-wow-delay={`.${index * 1}s`}
                     style={{
                       background: 'white',
+                      width: '100%',
+                      minHeight: '160px',
                       padding: '35px 30px',
                       borderRadius: '20px',
                       boxShadow: '0 10px 40px rgba(0,0,0,0.08)',
@@ -127,13 +129,11 @@ const Sustainability = () => {
                       e.currentTarget.style.transform = 'translateX(10px)';
                       e.currentTarget.style.borderColor = '#5a7249';
                       e.currentTarget.style.boxShadow = '0 15px 50px rgba(90, 114, 73, 0.2)';
-                      e.currentTarget.querySelector('.icon-wrapper').style.transform = 'rotate(360deg) scale(1.1)';
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.transform = 'translateX(0)';
                       e.currentTarget.style.borderColor = '#f0f0f0';
                       e.currentTarget.style.boxShadow = '0 10px 40px rgba(0,0,0,0.08)';
-                      e.currentTarget.querySelector('.icon-wrapper').style.transform = 'rotate(0deg) scale(1)';
                     }}
                   >
                     {/* Decorative background element */}
@@ -183,7 +183,7 @@ const Sustainability = () => {
                         textTransform: 'uppercase',
                         letterSpacing: '0.5px'
                       }}>
-                        Value {index + 1}
+                        {t('sustainabilityPage.commitment.valueLabel', { number: index + 1 })}
                       </div>
                       <p style={{ 
                         fontSize: '16px', 
@@ -194,22 +194,6 @@ const Sustainability = () => {
                       }}>
                         {item}
                       </p>
-                    </div>
-                    
-                    {/* Arrow indicator */}
-                    <div style={{
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '50%',
-                      background: 'rgba(90, 114, 73, 0.1)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
-                      position: 'relative',
-                      zIndex: 1
-                    }}>
-                      <i className="fas fa-arrow-right" style={{ fontSize: '16px', color: '#5a7249' }} />
                     </div>
                   </div>
                 </div>
@@ -230,7 +214,7 @@ const Sustainability = () => {
                     <i className="flaticon-plant" />
                     {t('sustainabilityPage.qualityAssurance.title')}
                   </span>
-                  <h2>International Standards</h2>
+                  <h2>{t('sustainabilityPage.qualityAssurance.heading')}</h2>
                 </div>
                 <p style={{ fontSize: '17px', lineHeight: '1.8', color: '#555', marginBottom: '40px' }}>
                   {t('sustainabilityPage.qualityAssurance.description')}
@@ -403,7 +387,7 @@ const Sustainability = () => {
                     <i className="flaticon-plant" />
                     {t('sustainabilityPage.customerPromise.title')}
                   </span>
-                  <h3>Our Commitment to You</h3>
+                  <h3>{t('sustainabilityPage.customerPromise.heading')}</h3>
                 </div>
                 
                 <div>

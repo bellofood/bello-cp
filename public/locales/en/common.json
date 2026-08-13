@@ -431,6 +431,9 @@
     "description": "At Bello Food, sustainability isn't just a promise—it's part of who we are. From farm to shelf, we commit to responsible practices that respect people, protect the environment, and ensure long-term value for our partners and communities.",
     "commitment": {
       "title": "Commitment to Sustainability & HSE",
+      "heading": "Our Core Values",
+      "subheading": "The principles that guide everything we do",
+      "valueLabel": "Value {{number}}",
       "items": [
         "Eco-friendly farming & processing",
         "Safety-first operations for employees & stakeholders"
@@ -438,6 +441,7 @@
     },
     "qualityAssurance": {
       "title": "Uncompromising Quality & Assurance",
+      "heading": "International Standards",
       "description": "\"Happy Customers, everywhere\" is more than a slogan—it's our guiding principle. Through strict quality control systems, advanced food safety protocols, and customer-centric service, Bello Food ensures that every olive and pickle meets the highest international standards.",
       "certifications": {
         "title": "Our certifications reflect this dedication:",
@@ -455,6 +459,7 @@
     },
     "customerPromise": {
       "title": "Customer Promise",
+      "heading": "Our Commitment to You",
       "items": [
         "30+ varieties",
         "Flexible packaging",

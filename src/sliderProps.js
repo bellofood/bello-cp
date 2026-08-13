@@ -232,6 +232,37 @@ export const sliderProps = {
       },
     ],
   },
+  featuresSlider: {
+    dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 800,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  },
   recentProductSlider: {
     dots: false,
     arrows: false,
